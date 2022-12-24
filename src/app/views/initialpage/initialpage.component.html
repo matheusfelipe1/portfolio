@@ -1,4 +1,4 @@
-<div>
+<div id="divInitial">
     <div class="header">
         <div class="nav">
             <div *ngFor="let title of nav">
@@ -29,41 +29,41 @@
     </div>
     <div class="aboutme">
         <p class="text">Olá, sou o Matheus.</p>
-        <img src="../../../assets/images/im_matheus.png" style="margin-top: '2.2rem';"/>
+        <img (mouseover)="changeState()" src="../../../assets/images/im_matheus.png" style="margin-top: '2.2rem';"/>
         <p class="textabouteme">Atuo como desenvolvedor desde 2019, tendo contato com diversas tecnologias, sempre em constante evolução.</p>
         <div style="margin-top: '2rem';" class="buttonMidias">
-            <img class="ic_midias" src="../../../assets/images/ic_download.png" />
+            <img class="ic_midias" style="height: 15px;" src="../../../assets/images/ic_download.png" />
             <p class="textMidias">Currículo</p>
         </div>
     </div>
-    <div class="content-tech">
+    <div (mouseover)="changeState()" id="animation1" [@changeDivSize]="currentState" class="content-tech">
         <div class="tech">
             <div class="imgs-tech">
-                <img src="../../../assets/images/flutter.png"  />
-                <img src="../../../assets/images/mysql.png"  />
-                <img src="../../../assets/images/angular.png"  />
+                <img [@fadeImgs]="currentState2" src="../../../assets/images/flutter.png"  />
+                <img [@fadeImgs]="currentState2" src="../../../assets/images/mysql.png"  />
+                <img [@fadeImgs]="currentState2" src="../../../assets/images/angular.png"  />
             </div>
         </div>
         <div class="tech">
             <div class="imgs-tech">
-                <img src="../../../assets/images/firebase.png"  />
-                <img src="../../../assets/images/android.png"  />
-                <img src="../../../assets/images/ios.png"  />
+                <img [@fadeImgs]="currentState2" src="../../../assets/images/firebase.png"  />
+                <img [@fadeImgs]="currentState2" src="../../../assets/images/android.png"  />
+                <img [@fadeImgs]="currentState2" src="../../../assets/images/ios.png"  />
             </div>
         </div>
         <div class="tech">
             <div class="imgs-tech">
-                <img src="../../../assets/images/typescript.png"  />
-                <img src="../../../assets/images/react_native.png"  />
-                <img src="../../../assets/images/react.png"  />
-                <img src="../../../assets/images/azure.png"  />
+                <img [@fadeImgs]="currentState2" src="../../../assets/images/typescript.png"  />
+                <img [@fadeImgs]="currentState2" src="../../../assets/images/react_native.png"  />
+                <img [@fadeImgs]="currentState2" src="../../../assets/images/react.png"  />
+                <img [@fadeImgs]="currentState2" src="../../../assets/images/azure.png"  />
             </div>
         </div>
     </div>
     <div>
         <p-carousel [value]="images"
         [numVisible]="3" 
-        [numScroll]="3" [circular]="true"
+        [numScroll]="1" [circular]="true"
         [showIndicators]="false">
             <ng-template let-item pTemplate="item">
                 <img [src]="item" />
@@ -73,20 +73,22 @@
     <div class="dev">
         <img src="../../../assets/images/im_dev.png" style="margin-top: '6rem';" />
     </div>
-    <div class="contact">
+    <div [@flip]="currentState3"  class="contact">
         <div style="display: flex; flex-direction: row; width: '30%'; justify-content: space-between;">
             <div class="labelr">
-                <p-radioButton styleClass="radio-style" name="contato" value="email" [(ngModel)]="selectedValue"></p-radioButton>
-                <img class="img-contact" src="../../../assets/images/ic_email.svg" />
+                <p-radioButton (onClick)="flip1()" styleClass="radio-style" name="contato" value="email" [(ngModel)]="selectedValue"></p-radioButton>
+                <img class="img-contact" *ngIf="selectedValue !== 'email'" src="../../../assets/images/ic_email.svg" />
+                <img class="img-contact" *ngIf="selectedValue === 'email'" src="../../../assets/images/ic_email_ativo.png" />
                 <p [class]="selectedValue === 'email' ? 'labelradio' : 'labelradio2'">E-mail: matheusfel13@gmail.com</p>
             </div>
             <div style="width: '50%';" class="labelr">
-                <p-radioButton name="contato" value="wpp" [(ngModel)]="selectedValue"></p-radioButton>
-                <img class="img-contact" src="../../../assets/images/ic_whatsapp.svg" />
+                <p-radioButton (onClick)="flip2()" name="contato" value="wpp" [(ngModel)]="selectedValue"></p-radioButton>
+                <img *ngIf="selectedValue !== 'wpp'" class="img-contact" src="../../../assets/images/ic_whatsapp.svg" />
+                <img *ngIf="selectedValue === 'wpp'" class="img-contact" src="../../../assets/images/ic_whatsapp_ativo.png" />
                 <p  [class]="selectedValue === 'wpp' ? 'labelradio' : 'labelradio2'">Whatsapp: +55 31 9 9346-1579</p>
             </div>
         </div>
-        <div style="display: flex; flex-direction: row; width: '40%'; justify-content: space-between;">
+        <div *ngIf="!isWpp" style="display: flex; flex-direction: row; width: '40%'; justify-content: space-between;">
             <!-- <div class="grid p-fluid">
                 <div class="col-12 md:col-4"> -->
                     <div class="p-inputgroup">
@@ -96,7 +98,7 @@
                 <!-- </div> -->
             <!-- </div> -->
         </div>
-        <div style="margin-top: 25px;" >
+        <div *ngIf="!isWpp" style="margin-top: 25px;" >
             <textarea [autoResize]="true" [cols]="85" [rows]="4" pInputTextarea placeholder="Mensagem"></textarea>
         </div>
         <div style="margin-top: 30px; margin-bottom: 20px;" class="buttonMidias">

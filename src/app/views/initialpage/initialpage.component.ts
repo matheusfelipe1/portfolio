@@ -1,10 +1,46 @@
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component } from '@angular/core';
 import { NavModel } from 'src/app/models/nav.models';
 
 @Component({
   selector: 'app-initialpage',
   templateUrl: './initialpage.component.html',
-  styleUrls: ['./initialpage.component.css']
+  styleUrls: ['./initialpage.component.css'],
+  animations: [
+    trigger('changeDivSize', [
+      state('initial', style({
+        height: '0px'
+      })),
+      state('final', style({
+        height: '50rem'
+      })),
+      transition('initial=>final', animate('1500ms')),
+      transition('final=>initial', animate('700ms'))
+    ]),
+    trigger('fadeImgs', [
+      state('initial', style({
+        opacity: 0.0,
+        animation: 'fadeOut'
+      })),
+      state('final', style({
+        opacity: 1,
+        animation: 'fadeIn'
+      })),
+      transition('initial=>final', animate('700ms')),
+      transition('final=>initial', animate('700ms'))
+    ]),
+    trigger('flip', [
+      state('initial', style({
+        transform: 'rotateX(0deg)'
+      })),
+      state('final', style({
+        transform: 'rotateX(360deg)'
+      })),
+      transition('initial=>final', animate('420ms')),
+      transition('final=>initial', animate('420ms'))
+    ]),
+    
+  ]
 })
 export class InitialpageComponent {
 
@@ -12,6 +48,41 @@ export class InitialpageComponent {
   navSelected: NavModel = {};
   images: string[] = [];
   selectedValue: string = 'email';
+  currentState = 'initial';
+  currentState2 = 'initial';
+  currentState3 = 'initial';
+  canAnimate: boolean = true;
+  isWpp: boolean = false;
+
+  changeState() {
+    if (this.canAnimate === true) {
+      this.canAnimate = false;
+      this.currentState = 'final';
+      setTimeout(() => {
+        this.changeState2();
+        console.log('aqui')
+      }, 2000)
+      setTimeout(() => {
+      this.canAnimate = true;
+      }, 1500)
+    }
+    
+  }
+  leaveState() {
+    if (this.canAnimate === true) {
+      this.canAnimate = false;
+      this.currentState2 = 'initial';
+      this.currentState = 'initial';
+      setTimeout(() => {
+        this.canAnimate = true;
+      }, 1500)
+    }
+  }
+
+  changeState2() {
+    this.currentState2 = 'final';
+  }
+
   constructor() {}
 
   ngOnInit() {
@@ -30,7 +101,7 @@ export class InitialpageComponent {
       "../../../assets/images/5.png",
       "../../../assets/images/6.png",
       "../../../assets/images/7.png",
-    ]
+    ];
   }
 
   onChangeNav(select: NavModel) {
@@ -41,6 +112,19 @@ export class InitialpageComponent {
         e = select
       }
     })
+  }
+
+  flip1() {
+    this.currentState3 = 'initial';
+    setTimeout(() => {
+      this.isWpp = false;
+    }, 300)
+  }
+  flip2() {
+    this.currentState3 = 'final';
+    setTimeout(() => {
+      this.isWpp = true;
+    }, 300)
   }
 
 }
