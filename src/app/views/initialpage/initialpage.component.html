@@ -1,5 +1,33 @@
 <section>
-    <header>
-        <div class="header"></div>
-    </header>
+    <div class="header">
+        <div class="nav">
+            <div *ngFor="let title of nav">
+                <div class="onNavHover" (click)="onChangeNav(title)">
+                    <div *ngIf="title.value" class="title">{{title.label}}</div>
+                    <div *ngIf="!title.value" class="title2">{{title.label}}</div>
+                    <div style="height: 1.1rem;"></div>
+                    <div *ngIf="title.value" class="selectNav"></div>
+                    <div *ngIf="!title.value" class="NoSelectNav"></div>
+                </div>
+            </div> 
+        </div>
+        
+    </div>
+    <div class="imagem">
+        <img src="../../../assets/images/im_nome.png" />
+        <p class="profission">Desenvolvedor</p>
+        <div style="display: flex; flex-direction: row; justify-content: space-between; width: '14.3%'; margin-top: 3.6rem;">
+            <div class="buttonMidias">
+                <img class="ic_midias" src="../../../assets/images/ic_github.png" />
+                <p class="textMidias">Github</p>
+            </div>
+            <div class="buttonMidias">
+                <img class="ic_midias" src="../../../assets/images/ic_linkedin.png" />
+                <p class="textMidias">Linkedin</p>
+            </div>
+        </div>
+    </div>
+    <div class="aboutme">
+
+    </div>
 </section>
