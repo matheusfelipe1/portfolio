@@ -102,6 +102,7 @@ export class InitialpageComponent {
       "../../../assets/images/6.png",
       "../../../assets/images/7.png",
     ];
+    this._scrolling()
   }
 
   onChangeNav(select: NavModel) {
@@ -111,7 +112,8 @@ export class InitialpageComponent {
       if (e.label === select.label) {
         e = select
       }
-    })
+    });
+    this._offsetPositionInPage(select);
   }
 
   flip1() {
@@ -125,6 +127,23 @@ export class InitialpageComponent {
     setTimeout(() => {
       this.isWpp = true;
     }, 300)
+  }
+
+  _scrolling() {
+    window.addEventListener('scroll', (e: any) => {
+      const element = document.getElementById('animation1');
+      var rect = element?.getBoundingClientRect();
+      let doc = window.scrollY;
+      if (doc >= rect?.top!) {
+        this.changeState();
+      }
+    })
+  }
+
+  _offsetPositionInPage(data: NavModel) {
+    const doc = document.getElementById(data.label!);
+    let element = doc?.getBoundingClientRect();
+    window.scrollTo({left: 0, top: element?.top})
   }
 
 }
