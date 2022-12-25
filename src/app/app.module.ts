@@ -12,6 +12,9 @@ import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { AnimateModule } from 'primeng/animate';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DialogModule } from 'primeng/dialog';
+import { ButtonModule } from 'primeng/button';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +29,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     InputTextModule,
     InputTextareaModule,
     AnimateModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    DialogModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -329,3 +329,9 @@ footer {
     align-items: center;
     align-content: center;
 }
+.img-projects:hover {
+    background-color: #40404028;
+    padding: 0.7rem;
+    opacity: 0.3;
+    border-radius: 1rem;
+}

@@ -1,5 +1,6 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component } from '@angular/core';
+import { DialogModel } from 'src/app/models/dialog.models';
 import { NavModel } from 'src/app/models/nav.models';
 
 @Component({
@@ -53,6 +54,8 @@ export class InitialpageComponent {
   currentState3 = 'initial';
   canAnimate: boolean = true;
   isWpp: boolean = false;
+  showDisplay: boolean = false;
+  dialog: DialogModel = {};
 
   changeState() {
     if (this.canAnimate === true) {
@@ -182,5 +185,12 @@ export class InitialpageComponent {
   _offsetPositionInPage(data: NavModel) {
     const find = document.getElementById(data.label!)?.offsetTop
     window.scrollTo({left: 0, top: find})
+  }
+
+  showDisplayText(path: string, msg: string, title?: string) {
+    this.dialog.path = path;
+    this.dialog.msg = msg;
+    this.dialog.title = title;
+    this.showDisplay = true;
   }
 }

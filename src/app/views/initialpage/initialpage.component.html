@@ -1,4 +1,4 @@
-<section>
+<section [class]="showDisplay === true ? 'indisplay' : ''">
     <div id="divInitial">
         <div id="nav"  class="header">
             <div class="nav">
@@ -40,24 +40,24 @@
         <div id='Habilidades' [@changeDivSize]="currentState" class="content-tech">
             <div class="tech">
                 <div class="imgs-tech">
-                    <img [@fadeImgs]="currentState2" src="../../../assets/images/flutter.png"  />
-                    <img [@fadeImgs]="currentState2" src="../../../assets/images/mysql.png"  />
-                    <img [@fadeImgs]="currentState2" src="../../../assets/images/angular.png"  />
+                    <img class="img-projects" class="img-projects" [@fadeImgs]="currentState2" src="../../../assets/images/flutter.png" (click)="showDisplayText('../../../assets/images/flutter.png', 'Eu sei Flutter')" />
+                    <img class="img-projects" [@fadeImgs]="currentState2" src="../../../assets/images/mysql.png" (click)="showDisplayText('../../../assets/images/mysql.png', 'Eu sei MySQL', '1')" />
+                    <img class="img-projects" [@fadeImgs]="currentState2" src="../../../assets/images/angular.png" (click)="showDisplayText('../../../assets/images/angular.png', 'Eu sei Angular')"  />
                 </div>
             </div>
             <div class="tech">
                 <div class="imgs-tech">
-                    <img [@fadeImgs]="currentState2" src="../../../assets/images/firebase.png"  />
-                    <img [@fadeImgs]="currentState2" src="../../../assets/images/android.png"  />
-                    <img [@fadeImgs]="currentState2" src="../../../assets/images/ios.png"  />
+                    <img class="img-projects" [@fadeImgs]="currentState2" src="../../../assets/images/firebase.png" (click)="showDisplayText('../../../assets/images/firebase.png', 'Eu sei Firebase')"  />
+                    <img class="img-projects" [@fadeImgs]="currentState2" src="../../../assets/images/android.png" (click)="showDisplayText('../../../assets/images/android.png', 'Eu sei Android')" />
+                    <img class="img-projects" [@fadeImgs]="currentState2" src="../../../assets/images/ios.png" (click)="showDisplayText('../../../assets/images/ios.png', 'Eu sei IOS')" />
                 </div>
             </div>
             <div class="tech">
                 <div class="imgs-tech">
-                    <img [@fadeImgs]="currentState2" src="../../../assets/images/typescript.png"  />
-                    <img [@fadeImgs]="currentState2" src="../../../assets/images/react_native.png"  />
-                    <img [@fadeImgs]="currentState2" src="../../../assets/images/react.png"  />
-                    <img [@fadeImgs]="currentState2" src="../../../assets/images/azure.png"  />
+                    <img class="img-projects" [@fadeImgs]="currentState2" src="../../../assets/images/typescript.png" (click)="showDisplayText('../../../assets/images/typescript.png', 'Eu sei Typescript', '1')" />
+                    <img class="img-projects" [@fadeImgs]="currentState2" src="../../../assets/images/react_native.png" (click)="showDisplayText('../../../assets/images/react_native.png', 'Eu sei React Native', '1')" />
+                    <img class="img-projects" [@fadeImgs]="currentState2" src="../../../assets/images/react.png" (click)="showDisplayText('../../../assets/images/react.png', 'Eu sei React', '1')" />
+                    <img class="img-projects" [@fadeImgs]="currentState2" src="../../../assets/images/azure.png" (click)="showDisplayText('../../../assets/images/azure.png', 'Eu sei Azure', '1')" />
                 </div>
             </div>
         </div>
@@ -118,3 +118,13 @@
         </footer>
     </div>
 </section>
+<p-dialog header="Title" [(visible)]="showDisplay" [blockScroll]="true" [transitionOptions]="'10ms'" [dismissableMask]="true" [modal]="true"
+   [responsive]="true"  [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [style]="{width: '50vw'}" >
+   <ng-template pTemplate="header">
+        <img [src]="dialog.path" [style]="{'height': dialog.title !== '1' ? '1.2rem' : '3.5rem'}" alt="">
+    </ng-template>
+    {{dialog.msg}}
+    <ng-template pTemplate="footer">
+        <button pButton type="button" icon="pi pi-check" (click)="showDisplay = false" label="Entendi" class="p-button-text"></button>
+    </ng-template>
+</p-dialog>
