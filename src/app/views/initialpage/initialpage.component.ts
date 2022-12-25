@@ -60,7 +60,6 @@ export class InitialpageComponent {
       this.currentState = 'final';
       setTimeout(() => {
         this.changeState2();
-        console.log('aqui')
       }, 2000)
       setTimeout(() => {
       this.canAnimate = true;
@@ -102,7 +101,8 @@ export class InitialpageComponent {
       "../../../assets/images/6.png",
       "../../../assets/images/7.png",
     ];
-    this._scrolling()
+    this._scrolling();
+    this._switchNavWhenScrolling();
   }
 
   onChangeNav(select: NavModel) {
@@ -132,18 +132,55 @@ export class InitialpageComponent {
   _scrolling() {
     window.addEventListener('scroll', (e: any) => {
       const element = document.getElementById('animation1');
+      const element2 = document.getElementById('nav');
       var rect = element?.getBoundingClientRect();
+      var rect2 = element2?.getBoundingClientRect();
       let doc = window.scrollY;
-      if (doc >= rect?.top!) {
+      var newrect = rect?.top! - rect2?.top!
+      if (doc >= newrect) {
         this.changeState();
       }
     })
   }
 
-  _offsetPositionInPage(data: NavModel) {
-    const doc = document.getElementById(data.label!);
-    let element = doc?.getBoundingClientRect();
-    window.scrollTo({left: 0, top: element?.top})
+  _switchNavWhenScrolling() {
+    window.addEventListener('scroll', (e: any) => {
+      let array: number[] = [];
+      let newarray: number[] = [];
+      const inicio = document.getElementById('Início')?.getBoundingClientRect();
+      const sobre = document.getElementById('Sobre')?.getBoundingClientRect();
+      const habilidades = document.getElementById('Habilidades')?.getBoundingClientRect();
+      const projetos = document.getElementById('Projetos')?.getBoundingClientRect();
+      const contato = document.getElementById('Contato')?.getBoundingClientRect();
+      const element2 = document.getElementById('nav')?.getBoundingClientRect();
+      array.push(inicio?.y! - element2?.y!);
+      array.push(sobre?.y! - element2?.y!);
+      array.push(habilidades?.y! - element2?.y!);
+      array.push(projetos?.y! - element2?.y!);
+      array.push(contato?.y! - element2?.y!);
+      newarray = array.filter(e => e >= 0);
+      switch (newarray.length) {
+        case 5:
+          this.nav.map(e => e.label === 'Início' ? e.value = true : e.value = false);
+          break;
+        case 4:
+          this.nav.map(e => e.label === 'Sobre' ? e.value = true : e.value = false);
+          break;
+        case 3:
+          this.nav.map(e => e.label === 'Habilidades' ? e.value = true : e.value = false);
+          break;
+        case 2:
+          this.nav.map(e => e.label === 'Projetos' ? e.value = true : e.value = false);
+          break;
+        default:
+          this.nav.map(e => e.label === 'Contato' ? e.value = true : e.value = false);
+          break;
+      }
+    });
   }
 
+  _offsetPositionInPage(data: NavModel) {
+    const find = document.getElementById(data.label!)?.offsetTop
+    window.scrollTo({left: 0, top: find})
+  }
 }
