@@ -2,6 +2,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import { Component } from '@angular/core';
 import { DialogModel } from 'src/app/models/dialog.models';
 import { NavModel } from 'src/app/models/nav.models';
+import { SendEmailModel } from 'src/app/models/sendEmail.models';
 import { Enviroments } from 'src/environments/environment';
 
 @Component({
@@ -58,6 +59,9 @@ export class InitialpageComponent {
   showDisplay: boolean = false;
   dialog: DialogModel = {};
   name: string = "";
+  enableWpp: boolean = false;
+  enableEmail: boolean = false;
+  sendEmail: SendEmailModel = {};
 
   changeState() {
     if (this.canAnimate === true) {
@@ -222,6 +226,16 @@ export class InitialpageComponent {
   openGitHub(): void {
     const doc = document.getElementById('githubId');
     doc?.click();
+  }
+
+  returnValidForm(): boolean {
+    if ((this.sendEmail.email !== "" && this.sendEmail.email !== undefined) && 
+      (this.sendEmail.name !== "" && this.sendEmail.name !== undefined) && 
+      (this.sendEmail.text !== "" && this.sendEmail.text !== undefined)) {
+      return true;
+    } else {
+      return false;
+    } 
   }
   
 }
