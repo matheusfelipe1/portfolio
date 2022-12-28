@@ -2,6 +2,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import { Component } from '@angular/core';
 import { DialogModel } from 'src/app/models/dialog.models';
 import { NavModel } from 'src/app/models/nav.models';
+import { Enviroments } from 'src/environments/environment';
 
 @Component({
   selector: 'app-initialpage',
@@ -56,6 +57,7 @@ export class InitialpageComponent {
   isWpp: boolean = false;
   showDisplay: boolean = false;
   dialog: DialogModel = {};
+  name: string = "";
 
   changeState() {
     if (this.canAnimate === true) {
@@ -117,6 +119,7 @@ export class InitialpageComponent {
       }
     });
     this._offsetPositionInPage(select);
+
   }
 
   flip1() {
@@ -193,4 +196,32 @@ export class InitialpageComponent {
     this.dialog.title = title;
     this.showDisplay = true;
   }
+
+  returnLinkWpp(): string {
+    return Enviroments.whatsapp + Enviroments.phoneNumber + '&text=' + Enviroments.defaultMsgFirst + this.name + Enviroments.defaultMsgLast
+  }
+
+  returnLinkedIn(): string {
+    return Enviroments.linkedin
+  }
+
+  returnGitHub(): string {
+    return Enviroments.github;
+  }
+
+  openWpp(): void {
+    const doc = document.getElementById('wppId');
+    doc?.click();
+  }
+
+  openLinkedIn(): void {
+    const doc = document.getElementById('linkedinId');
+    doc?.click();
+  }
+
+  openGitHub(): void {
+    const doc = document.getElementById('githubId');
+    doc?.click();
+  }
+  
 }
