@@ -184,7 +184,7 @@ export class InitialpageComponent {
 
   _offsetPositionInPage(data: NavModel) {
     const find = document.getElementById(data.label!)?.offsetTop
-    window.scrollTo({left: 0, top: find})
+    window.scrollTo({left: 0, top: find, behavior: 'smooth'})
   }
 
   showDisplayText(path: string, msg: string, title?: string) {

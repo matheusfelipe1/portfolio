@@ -64,9 +64,9 @@
         <div id='Projetos'>
             <p-carousel [value]="images"
             [numVisible]="3" 
-            [numScroll]="1" [circular]="true"
+            [numScroll]="1" [circular]="true" [autoplayInterval]="2000" 
             [showIndicators]="false">
-                <ng-template let-item pTemplate="item">
+                <ng-template let-item pTemplate="item" >
                     <img [src]="item" />
                 </ng-template>
             </p-carousel>
