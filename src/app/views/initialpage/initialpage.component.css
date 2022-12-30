@@ -413,3 +413,75 @@ h1 {
     border-radius: 2.5rem;
     margin-top: 0.8rem;
 }
+div .animationContact {
+    position: relative;
+    animation-name: firstInput;
+    animation-duration: 2s;
+    animation-delay: 0s;
+}
+
+div .animationContact2 {
+    position: relative;
+    animation-name: secondInput;
+    animation-duration: 2s;
+    animation-delay: 0s;
+}
+
+@keyframes firstInput {
+    0% {
+        left: -300px;
+        opacity: 0.0;
+    }
+    10% {
+        opacity: 0.0;
+    }
+    25% {
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    75% {
+        opacity: 0.7;
+    }
+    100% {
+        left: 0px;
+        opacity: 1;
+    }
+}   
+@keyframes secondInput {
+    0% {
+        right: -300px;
+        opacity: 0.0;
+    }
+    10% {
+        opacity: 0.0;
+    }
+    25% {
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    75% {
+        opacity: 0.7;
+    }
+    100% {
+        right: 0px;
+        opacity: 1;
+    }
+}  
+:host ::ng-deep .p-dialog {
+    position: relative;
+    animation-name: dialog;
+    animation-duration: 1s;
+    animation-delay: 0s;
+}
+@keyframes dialog {
+    0% {
+        bottom: -25rem;
+    }
+    100% {
+        bottom: 0px;
+    }
+}

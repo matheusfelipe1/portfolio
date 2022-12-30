@@ -32,16 +32,18 @@ import { Enviroments } from 'src/environments/environment';
       transition('initial=>final', animate('700ms')),
       transition('final=>initial', animate('700ms'))
     ]),
-    trigger('flip', [
-      state('initial', style({
-        transform: 'rotateX(0deg)'
-      })),
-      state('final', style({
-        transform: 'rotateX(360deg)'
-      })),
-      transition('initial=>final', animate('420ms')),
-      transition('final=>initial', animate('420ms'))
-    ]),
+    // trigger('flip', [
+    //   state('initial', style({
+    //     opacity: 1,
+    //     animation: 'fadeOut'
+    //   })),
+    //   state('final', style({
+    //     opacity: 1,
+    //     animation: 'fadeIn'
+    //   })),
+    //   transition('initial=>final', animate('420ms')),
+    //   transition('final=>initial', animate('420ms'))
+    // ]),
     
   ]
 })
@@ -112,6 +114,7 @@ export class InitialpageComponent {
     ];
     this._scrolling();
     this._switchNavWhenScrolling();
+    this._switchScrollingInContact();
   }
 
   onChangeNav(select: NavModel) {
@@ -236,6 +239,38 @@ export class InitialpageComponent {
     } else {
       return false;
     } 
+  }
+
+  _switchScrollingInContact() {
+    window.addEventListener('scroll', (e: any) => {
+      const element = document.getElementById('Contato');
+      const element2 = document.getElementById('nav');
+      var rect = element?.getBoundingClientRect();
+      var rect2 = element2?.getBoundingClientRect();
+      let doc = window.scrollY;
+      var newrect = rect?.top! - rect2?.top!
+      const el1 = document.getElementsByClassName('1');
+      const el2 = document.getElementsByClassName('2');
+      if (doc >= newrect) {
+        for (let index = 0; index < el1.length; index++) {
+          const element = el1[index];
+          element.classList.add('animationContact');
+        }
+        for (let index = 0; index < el2.length; index++) {
+          const element = el2[index];
+          element.classList.add('animationContact2');
+        }
+      } else {
+        for (let index = 0; index < el1.length; index++) {
+          const element = el1[index];
+          element.classList.remove('animationContact');
+        }
+        for (let index = 0; index < el2.length; index++) {
+          const element = el2[index];
+          element.classList.remove('animationContact2');
+        }
+      }
+    })
   }
   
 }
