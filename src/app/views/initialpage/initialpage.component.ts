@@ -64,6 +64,7 @@ export class InitialpageComponent {
   enableWpp: boolean = false;
   enableEmail: boolean = false;
   sendEmail: SendEmailModel = {};
+  piscando: boolean = false;
 
   changeState() {
     if (this.canAnimate === true) {
@@ -271,6 +272,13 @@ export class InitialpageComponent {
         }
       }
     })
+  }
+
+  piscar() {
+    this.piscando = true;
+    setTimeout(() => {
+      this.piscando = false;
+    }, 700)
   }
   
 }

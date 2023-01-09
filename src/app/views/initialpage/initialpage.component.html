@@ -38,13 +38,14 @@
         </div>
         <div id='Sobre' class="aboutme">
             <p class="text">Olá, sou o Matheus.</p>
-            <img src="../../../assets/images/im_matheus.png" style="margin-top: '2.2rem';"/>
+            <img *ngIf="!piscando" src="../../../assets/images/avatar_2.png" style="margin-top: '2.2rem';"/>
+            <img *ngIf="piscando" src="../../../assets/images/avatar_2_piscando.png" style="margin-top: '2.2rem';"/>
             <p class="textabouteme">Atuo como desenvolvedor desde 2019, tendo contato com diversas tecnologias, sempre em constante evolução.</p>
             <!-- <div style="margin-top: '2rem';" class="buttonMidias">
                 <img  class="ic_midias" style="height: 15px;" src="../../../assets/images/ic_download.png" />
                 <p class="textMidias">Currículo</p>
             </div> -->
-            <button id="animation1" pButton type="button" icon="pi pi-download" label="Currículo"  >
+            <button id="animation1" pButton type="button" icon="pi pi-download" label="Currículo" (click)="piscar()"  >
             </button>
         </div>
         <div id='Habilidades' [@changeDivSize]="currentState" class="content-tech">
