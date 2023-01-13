@@ -5,6 +5,7 @@ import { NavModel } from 'src/app/models/nav.models';
 import { SendEmailModel } from 'src/app/models/sendEmail.models';
 import { SessionService } from 'src/app/session.service';
 import { Enviroments } from 'src/environments/environment';
+const fileSaver = require('file-saver');
 
 @Component({
   selector: 'app-initialpage',
@@ -45,7 +46,7 @@ import { Enviroments } from 'src/environments/environment';
     //   transition('initial=>final', animate('420ms')),
     //   transition('final=>initial', animate('420ms'))
     // ]),
-    
+
   ]
 })
 export class InitialpageComponent {
@@ -79,10 +80,10 @@ export class InitialpageComponent {
         this.changeState2();
       }, 2000)
       setTimeout(() => {
-      this.canAnimate = true;
+        this.canAnimate = true;
       }, 1500)
     }
-    
+
   }
   leaveState() {
     if (this.canAnimate === true) {
@@ -101,15 +102,15 @@ export class InitialpageComponent {
 
   constructor(
     private sessionService: SessionService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.nav = [
-      {label: 'Início', value: true},
-      {label: 'Sobre', value: false},
-      {label: 'Habilidades', value: false},
-      {label: 'Projetos', value: false},
-      {label: 'Contato', value: false},
+      { label: 'Início', value: true },
+      { label: 'Sobre', value: false },
+      { label: 'Habilidades', value: false },
+      { label: 'Projetos', value: false },
+      { label: 'Contato', value: false },
     ]
     this.images = [
       "../../../assets/images/1.png",
@@ -202,7 +203,7 @@ export class InitialpageComponent {
 
   _offsetPositionInPage(data: NavModel) {
     const find = document.getElementById(data.label!)?.offsetTop
-    window.scrollTo({left: 0, top: find, behavior: 'smooth'})
+    window.scrollTo({ left: 0, top: find, behavior: 'smooth' })
   }
 
   showDisplayText(path: string, msg: string, title?: string) {
@@ -240,13 +241,13 @@ export class InitialpageComponent {
   }
 
   returnValidForm(): boolean {
-    if ((this.sendEmail.email !== "" && this.sendEmail.email !== undefined) && 
-      (this.sendEmail.name !== "" && this.sendEmail.name !== undefined) && 
+    if ((this.sendEmail.email !== "" && this.sendEmail.email !== undefined) &&
+      (this.sendEmail.name !== "" && this.sendEmail.name !== undefined) &&
       (this.sendEmail.text !== "" && this.sendEmail.text !== undefined)) {
       return true;
     } else {
       return false;
-    } 
+    }
   }
 
   _switchScrollingInContact() {
@@ -285,7 +286,8 @@ export class InitialpageComponent {
     this.piscando = true;
     setTimeout(() => {
       this.piscando = false;
-    }, 700)
+    }, 700);
+    this.dowloadCv()
   }
 
   postEmail(): void {
@@ -312,5 +314,18 @@ export class InitialpageComponent {
       }
     });
   }
-  
+  async dowloadCv() {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "assets/curriculo_matheus.pdf");
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.responseType = "blob";
+    xhr.onload = function () {
+      if (this.status === 200) {
+        var blob = new Blob([xhr.response], { type: 'application/pdf' });
+        fileSaver.saveAs(blob, 'cv_matheus.pdf')
+      }
+    };
+    xhr.send();
+  }
+
 }

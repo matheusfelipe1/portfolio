@@ -21,4 +21,8 @@ export class SessionService {
         })
       }).pipe(take(1))
   }
+
+  getCV(): Observable<any> {
+    return this.http.get(`assets/curriculo_matheus.pdf`).pipe(take(1))
+  }
 }
