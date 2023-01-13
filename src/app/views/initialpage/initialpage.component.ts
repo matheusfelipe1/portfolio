@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { DialogModel } from 'src/app/models/dialog.models';
 import { NavModel } from 'src/app/models/nav.models';
 import { SendEmailModel } from 'src/app/models/sendEmail.models';
+import { SessionService } from 'src/app/session.service';
 import { Enviroments } from 'src/environments/environment';
 
 @Component({
@@ -65,6 +66,10 @@ export class InitialpageComponent {
   enableEmail: boolean = false;
   sendEmail: SendEmailModel = {};
   piscando: boolean = false;
+  loading: boolean = false;
+  showDisplayResult: boolean = false;
+  resultTitle: string = "";
+  resultMsg: string = "";
 
   changeState() {
     if (this.canAnimate === true) {
@@ -94,7 +99,9 @@ export class InitialpageComponent {
     this.currentState2 = 'final';
   }
 
-  constructor() {}
+  constructor(
+    private sessionService: SessionService
+  ) {}
 
   ngOnInit() {
     this.nav = [
@@ -279,6 +286,31 @@ export class InitialpageComponent {
     setTimeout(() => {
       this.piscando = false;
     }, 700)
+  }
+
+  postEmail(): void {
+    this.loading = true;
+    const body = {
+      name: this.sendEmail.name,
+      text: this.sendEmail.text,
+      email: this.sendEmail.email
+    };
+    this.sessionService.sendEmail(body).subscribe({
+      next: (value: any) => {
+        console.log(value);
+        this.loading = false;
+        this.showDisplayResult = true;
+        this.resultTitle = 'Sucesso';
+        this.resultMsg = 'E-mail enviado com sucesso!';
+      },
+      error: (error: any) => {
+        console.log(error);
+        this.loading = false;
+        this.showDisplayResult = true;
+        this.resultTitle = 'Erro';
+        this.resultMsg = 'Erro ao enviar o e-mail';
+      }
+    });
   }
   
 }

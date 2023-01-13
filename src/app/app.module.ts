@@ -14,6 +14,8 @@ import { AnimateModule } from 'primeng/animate';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
+import { HttpClientModule } from '@angular/common/http';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { ButtonModule } from 'primeng/button';
     AnimateModule,
     BrowserAnimationsModule,
     DialogModule,
-    ButtonModule
+    ButtonModule,
+    HttpClientModule,
+    ProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

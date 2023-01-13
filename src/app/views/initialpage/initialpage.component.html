@@ -124,7 +124,7 @@
                 <i class="pi pi-send" style="font-size: 1.5rem; color: white; margin-right: 0.7rem;"></i>
                 
             </div> -->
-            <button [disabled]="!returnValidForm()" *ngIf="!isWpp" pButton class="2 animationContact2" type="button" icon="pi pi-send" label="Enviar"  >
+            <button [disabled]="!returnValidForm()" *ngIf="!isWpp" pButton class="2 animationContact2" type="button" icon="pi pi-send" label="Enviar" (click)="postEmail()"  >
             </button>
             <button class="wppButton 2 animationContact2" *ngIf="isWpp" pButton type="button" icon="pi pi-whatsapp" label="Abrir Whatsapp e enviar" (click)="openWpp()" [disabled]="name === '' ? true : false" >
                 <a [href]="returnLinkWpp()" id="wppId" target="_blank" rel="noopener noreferrer" hidden></a>
@@ -143,6 +143,19 @@
     </ng-template>
     {{dialog.msg}}
     <ng-template pTemplate="footer">
-        <button pButton type="button" icon="pi pi-check" (click)="showDisplay = false" label="Entendi" class="p-button-text"></button>
+        <button pButton type="button" icon="pi pi-check" (click)="showDisplay = false" label="Entendi" class="p-button-text returned"></button>
+    </ng-template>
+</p-dialog>
+
+<div *ngIf="loading" class="popupMaskChanged">
+    <p-progressSpinner  styleClass="custom-spinner" strokeWidth="8"  animationDuration=".5s"></p-progressSpinner>
+    <!-- <p-progressSpinner></p-progressSpinner> -->
+</div>
+
+<p-dialog [header]="resultTitle" [(visible)]="showDisplayResult" [blockScroll]="true" [transitionOptions]="'10ms'" [dismissableMask]="true" [modal]="true"
+   [responsive]="true"  [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [style]="{width: '25vw'}" ngClass="teste" >
+        {{resultMsg}}
+    <ng-template pTemplate="footer">
+        <button pButton type="button" icon="pi pi-check" (click)="showDisplayResult = false" label="Entendi" class="p-button-text returned"></button>
     </ng-template>
 </p-dialog>
