@@ -146,10 +146,12 @@ export class InitialpageComponent {
   flip1() {
     this.currentState3 = 'initial';
     this.isWpp = false;
+    this.selectedValue = 'email';
   }
   flip2() {
     this.currentState3 = 'final';
     this.isWpp = true;
+    this.selectedValue = 'wpp';
   }
 
   _scrolling() {
