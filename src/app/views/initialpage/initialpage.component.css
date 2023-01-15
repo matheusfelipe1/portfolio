@@ -1,4 +1,3 @@
-
 .header {
     margin-top: -0.5rem;
     margin-left: -0.5rem;
@@ -8,6 +7,7 @@
     position: fixed;
     width: 100%;
 }
+
 .nav {
     display: flex;
     flex-direction: row;
@@ -15,14 +15,16 @@
     align-items: center;
     margin-right: 5rem;
 }
+
 .nav .title {
     margin-left: 1rem;
     margin-right: 1rem;
     color: white;
     margin-top: 0.6rem;
-    
+
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 .nav .title2 {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
@@ -30,14 +32,15 @@
     margin-top: 0.9rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 .imagem {
     background-image: url("../../../assets/images/imagem.png");
-    background-color: #cccccc; 
+    background-color: #cccccc;
     height: 50rem;
     margin-left: -0.5rem;
     margin-right: -0.5rem;
-    background-position: center; 
-    background-repeat: no-repeat; 
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -45,6 +48,7 @@
     align-items: center;
     align-content: center;
 }
+
 .selectNav {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
@@ -55,6 +59,7 @@
     opacity: 1;
     border-radius: 0.5rem;
 }
+
 .NoSelectNav {
     margin-left: 1rem;
     height: 4px;
@@ -63,6 +68,7 @@
     /* background: #F25790 0% 0% no-repeat padding-box; */
     opacity: 1;
 }
+
 .profission {
     font: var(--unnamed-font-style-normal) normal normal 42px/56px var(--unnamed-font-family-segoe-ui);
     letter-spacing: var(--unnamed-character-spacing-0);
@@ -74,6 +80,7 @@
     color: #FFFFFF;
     opacity: 1;
 }
+
 .buttonMidias {
     border: 2px solid var(--unnamed-color-ffffff);
     background: #FFFFFF3D 0% 0% no-repeat padding-box;
@@ -86,6 +93,7 @@
     justify-content: space-between;
     align-items: center;
 }
+
 .buttonWpp {
     border: 2px solid var(--unnamed-color-ffffff);
     background: #4dc20e 0% 0% no-repeat padding-box;
@@ -98,6 +106,7 @@
     justify-content: space-between;
     align-items: center;
 }
+
 .buttonWpp:hover {
     border: 2px solid var(--unnamed-color-ffffff);
     background: #2f840281 0% 0% no-repeat padding-box;
@@ -110,6 +119,7 @@
     justify-content: space-between;
     align-items: center;
 }
+
 .textMidias {
     text-align: left;
     font-size: 15px;
@@ -120,18 +130,22 @@
     padding-left: 7px;
     padding-right: 15px;
 }
+
 .ic_midias {
     padding-left: 15px;
     height: 1.5rem;
 }
+
 .buttonMidias:hover {
     background: #cac9c989 0% 0% no-repeat padding-box;
 }
+
 .onNavHover:hover {
     background: #81818120 0% 0% no-repeat padding-box;
     border-radius: 0.2rem;
     height: 2rem;
 }
+
 .aboutme {
     height: 60rem;
     margin-left: -0.5rem;
@@ -145,6 +159,7 @@
     align-items: center;
     align-content: center;
 }
+
 .aboutme .text {
     font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-bold) var(--unnamed-font-size-31)/var(--unnamed-line-spacing-41) var(--unnamed-font-family-segoe-ui);
     letter-spacing: var(--unnamed-character-spacing-0);
@@ -156,6 +171,7 @@
     color: #F25790;
     opacity: 1;
 }
+
 .textabouteme {
     font: var(--unnamed-font-style-normal) normal normal 22px/30px var(--unnamed-font-family-segoe-ui);
     letter-spacing: var(--unnamed-character-spacing-0);
@@ -168,6 +184,7 @@
     opacity: 1;
     margin-top: 5rem;
 }
+
 .content-tech {
     display: flex;
     flex-direction: column;
@@ -176,6 +193,7 @@
     align-content: center;
     height: 50rem;
 }
+
 .tech {
     border-radius: 121px;
     opacity: 1;
@@ -189,6 +207,7 @@
     align-items: center;
     align-content: center;
 }
+
 .imgs-tech {
     display: flex;
     flex-direction: row;
@@ -198,12 +217,14 @@
     margin-top: 4.2rem;
     width: 85%;
 }
+
 .dev {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
+
 .contact {
     margin-left: -0.5rem;
     margin-right: -0.5rem;
@@ -215,6 +236,7 @@
     justify-content: center;
     align-items: center;
 }
+
 .labelr {
     display: flex;
     flex-direction: row;
@@ -223,30 +245,28 @@
     margin-bottom: 2rem;
 }
 
-:host ::ng-deep .p-radiobutton 
-    .p-radiobutton-box.p-highlight, 
-:host ::ng-deep .p-radiobutton 
-    .p-radiobutton-box.p-highlight:hover {
-      
+:host ::ng-deep .p-radiobutton .p-radiobutton-box.p-highlight,
+:host ::ng-deep .p-radiobutton .p-radiobutton-box.p-highlight:hover {
+
     background-color: #ffff;
     border-color: #00FFFF;
     box-shadow: none;
 }
-  
-:host ::ng-deep .p-radiobutton 
-    .p-radiobutton-box:not(.p-disabled)
-    :not(.p-highlight):hover {
+
+:host ::ng-deep .p-radiobutton .p-radiobutton-box:not(.p-disabled) :not(.p-highlight):hover {
     border-color: #00FFFF;
 }
-  
+
 :host ::ng-deep .p-radiobutton-icon {
     background-color: #00FFFF !important;
 }
+
 .img-contact {
     height: 25px;
     margin-left: 15px;
     margin-top: 20px;
 }
+
 .labelradio {
     color: var(--unnamed-color-00ffff);
     text-align: left;
@@ -257,6 +277,7 @@
     opacity: 1;
     margin-left: 10px;
 }
+
 .labelradio2 {
     color: var(--unnamed-color-00ffff);
     text-align: left;
@@ -267,6 +288,7 @@
     opacity: 1;
     margin-left: 10px;
 }
+
 .p-inputtext.input {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 1rem;
@@ -280,6 +302,7 @@
     border-radius: 6px;
     margin-right: 12px;
 }
+
 .p-inputtext.inputNotValid {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 1rem;
@@ -293,6 +316,7 @@
     border-radius: 6px;
     margin-right: 12px;
 }
+
 .p-inputtext.input:hover {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 1rem;
@@ -305,6 +329,7 @@
     appearance: none;
     border-radius: 6px;
 }
+
 .textSend {
     text-align: left;
     font-size: 15px;
@@ -315,6 +340,7 @@
     padding-left: 30px;
     padding-right: 30px;
 }
+
 .p-inputtext.wpp {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 1rem;
@@ -330,6 +356,7 @@
     width: 30%;
     margin-top: 2rem;
 }
+
 .p-inputtext.wppNotValid {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 1rem;
@@ -345,6 +372,7 @@
     width: 30%;
     margin-top: 2rem;
 }
+
 footer {
     background: #000000 0% 0% no-repeat padding-box;
     opacity: 1;
@@ -358,12 +386,14 @@ footer {
     align-items: center;
     align-content: center;
 }
+
 .img-projects:hover {
     background-color: #40404028;
     padding: 0.7rem;
     opacity: 0.3;
     border-radius: 1rem;
 }
+
 h1 {
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -382,6 +412,7 @@ h1 {
     border-radius: 2.5rem;
     margin-top: 2.5rem;
 }
+
 .p-button.wppButton:hover {
     color: #ffffff;
     background: #007f2f;
@@ -395,7 +426,7 @@ h1 {
 
 .p-button {
     color: #ffffff;
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
     border: 1px solid #FFFFFF;
     padding: 0.75rem 1.25rem;
     font-size: 1rem;
@@ -403,9 +434,10 @@ h1 {
     border-radius: 2.5rem;
     margin-top: 0.8rem;
 }
+
 .p-button:hover {
     color: #ffffff;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     border: 1px solid #FFFFFF;
     padding: 0.75rem 1.25rem;
     font-size: 1rem;
@@ -413,11 +445,25 @@ h1 {
     border-radius: 2.5rem;
     margin-top: 0.8rem;
 }
+
+.buttonslinks {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 14.3%;
+    margin-top: 3.6rem;
+}
+
 div .animationContact {
-    position: relative;
+    position: relative; 
     animation-name: firstInput;
     animation-duration: 2s;
     animation-delay: 0s;
+}
+
+section { 
+    height: 100%; 
+    margin: 0; 
 }
 
 div .animationContact2 {
@@ -432,71 +478,103 @@ div .animationContact2 {
         left: -300px;
         opacity: 0.0;
     }
+
     10% {
         opacity: 0.0;
     }
+
     25% {
         opacity: 0.2;
     }
+
     50% {
         opacity: 0.5;
     }
+
     75% {
         opacity: 0.7;
     }
+
     100% {
         left: 0px;
         opacity: 1;
     }
-}   
+}
+
 @keyframes secondInput {
     0% {
         right: -300px;
         opacity: 0.0;
     }
+
     10% {
         opacity: 0.0;
     }
+
     25% {
         opacity: 0.2;
     }
+
     50% {
         opacity: 0.5;
     }
+
     75% {
         opacity: 0.7;
     }
+
     100% {
         right: 0px;
         opacity: 1;
     }
-}  
+}
+
 :host ::ng-deep .p-dialog {
     position: relative;
     animation-name: dialog;
     animation-duration: 1s;
     animation-delay: 0s;
 }
+
+.firstInputs {
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+    justify-content: space-between;
+}
+
+.labelsWppEmail {
+    display: flex;
+    flex-direction: row;
+    width: 30%;
+    justify-content: space-between;
+}
+
 @keyframes dialog {
     0% {
         bottom: -25rem;
     }
+
     100% {
         bottom: 0px;
     }
 }
 
 @keyframes p-progress-spinner-color {
+
     100%,
     0% {
         stroke: #d62d20;
     }
+
     40% {
         stroke: #0057e7;
     }
+
     66% {
         stroke: #008744;
     }
+
     80%,
     90% {
         stroke: #ffa700;
@@ -533,3 +611,261 @@ div .animationContact2 {
     margin-top: 2.5rem;
 }
 
+.divInput {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-top: 4.1rem;
+    width: 85%;
+}
+
+/* Responsividades */
+@media screen and (max-width: 320px) {
+    .nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        align-items: center;
+        margin-right: 1rem;
+    }
+
+    .imagem {
+        background-image: url("../../../assets/images/imagem.png");
+        background-color: #cccccc;
+        /* height: 50rem; */
+        margin-left: -0.5rem;
+        margin-right: -0.5rem;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        width: 42rem;
+    }
+
+    .imgName {
+        width: 33rem;
+    }
+
+    .profission {
+        font: var(--unnamed-font-style-normal) normal normal 42px/56px var(--unnamed-font-family-segoe-ui);
+        letter-spacing: var(--unnamed-character-spacing-0);
+        color: var(--unnamed-color-ffffff);
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 34px;
+        letter-spacing: 2px;
+        color: #FFFFFF;
+        opacity: 1;
+    }
+
+    .buttonslinks {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 23%;
+        margin-top: 0.7rem;
+    }
+
+    .aboutme {
+        height: 60rem;
+        margin-left: -0.5rem;
+        margin-right: -0.5rem;
+        background: var(--unnamed-color-202020) 0% 0% no-repeat padding-box;
+        background: #202020 0% 0% no-repeat padding-box;
+        opacity: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        width: 42rem;
+    }
+
+    .aboutme .text {
+        font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-bold) var(--unnamed-font-size-31)/var(--unnamed-line-spacing-41) var(--unnamed-font-family-segoe-ui);
+        letter-spacing: var(--unnamed-character-spacing-0);
+        color: var(--unnamed-color-f25790);
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 27px;
+        letter-spacing: 0px;
+        color: #F25790;
+        opacity: 1;
+    }
+
+    .textabouteme {
+        font: var(--unnamed-font-style-normal) normal normal 22px/30px var(--unnamed-font-family-segoe-ui);
+        letter-spacing: var(--unnamed-character-spacing-0);
+        color: var(--unnamed-color-ffffff);
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 19.5px;
+        letter-spacing: 0px;
+        color: #FFFFFF;
+        opacity: 1;
+        margin-top: 5rem;
+        width: 75%;
+    }
+
+    .content-tech {
+        display: flex;
+        flex-direction: column;
+        justify-content: top;
+        align-items: start;
+        align-content: start;
+        /* height: 20rem; */
+    }
+
+    .tech {
+        border-radius: 121px;
+        opacity: 1;
+        width: 42rem;
+        height: 40%;
+        background-color: #FFFFFF;
+        margin-top: -7rem;
+        margin-left: -0.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: top;
+        align-items: center;
+        align-content: center;
+    }
+
+    .img-projectsresp {
+        width: 9rem;
+    }
+
+    .img-projectsresp2 {
+        height: 5rem;
+    }
+
+    .img-projectsresp3 {
+        height: 2.2rem;
+    }
+
+    :host ::ng-deep .p-carousel.p-component.p-carousel-horizontal {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        width: 30rem;
+    }
+
+    .carosel {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+        align-content: center;
+        margin-left: 6rem;
+        margin-top: -12rem;
+    }
+
+    .dev {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 40rem;
+    }
+
+    .dev2 {
+        width: 90%;
+        margin-left: 1rem;
+    }
+
+    .contact {
+        width: 42rem;
+        margin-left: -0.5rem;
+        margin-right: -0.5rem;
+        margin-top: 5rem;
+        background-color: #202020;
+        height: 30rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .firstInputs {
+        display: flex;
+        flex-direction: row;
+        width: 90%;
+        justify-content: space-between;
+    }
+
+    .p-inputtext.input {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        font-size: 1rem;
+        color: #FFFFFF;
+        background: #0000;
+        padding: 0.75rem 0.75rem;
+        border: 1px solid #FFFFFF;
+        transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+        -webkit-appearance: none;
+        appearance: none;
+        border-radius: 6px;
+        margin-right: 12px;
+    }
+
+    .p-inputtext.inputresp {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        font-size: 1rem;
+        color: #FFFFFF;
+        background: #0000;
+        padding: 0.75rem 0.75rem;
+        border: 1px solid #FFFFFF;
+        transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+        -webkit-appearance: none;
+        appearance: none;
+        border-radius: 6px;
+        margin-right: 12px;
+        width: 37rem;
+    }
+
+    footer {
+        background: #000000 0% 0% no-repeat padding-box;
+        opacity: 1;
+        height: 2.5rem;
+        margin-left: -0.5rem;
+        margin-right: -0.5rem;
+        margin-bottom: -0.5rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        align-items: center;
+        align-content: center;
+        width: 42rem;
+    }
+
+    .labelsWppEmail {
+        display: flex;
+        flex-direction: row;
+        width: 70%;
+        justify-content: space-between;
+    }
+
+    .p-inputtext.wpp {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        font-size: 1rem;
+        color: #FFFFFF;
+        background: #0000;
+        padding: 0.75rem 0.75rem;
+        border: 1px solid #FFFFFF;
+        transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+        -webkit-appearance: none;
+        appearance: none;
+        border-radius: 6px;
+        margin-right: 12px;
+        width: 37rem;
+        margin-top: 2rem;
+    }
+
+}

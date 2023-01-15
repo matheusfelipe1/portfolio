@@ -1,6 +1,6 @@
 <section [class]="showDisplay === true ? 'indisplay' : ''">
-    <div id="divInitial">
-        <div id="nav"  class="header">
+    <div class="all-content" id="divInitial">
+        <div id="nav" class="header">
             <div class="nav">
                 <div *ngFor="let title of nav">
                     <div class="onNavHover" (click)="onChangeNav(title)">
@@ -10,20 +10,20 @@
                         <div *ngIf="title.value" class="selectNav"></div>
                         <div *ngIf="!title.value" class="NoSelectNav"></div>
                     </div>
-                </div> 
+                </div>
             </div>
-            
+
         </div>
         <div id='Início' class="imagem">
-            <img src="../../../assets/images/im_nome.png" />
+            <img class="imgName" src="../../../assets/images/im_nome.png" />
             <p class="profission">Desenvolvedor</p>
-            <div style="display: flex; flex-direction: row; justify-content: space-between; width: '14.3%'; margin-top: 3.6rem;">
+            <div class="buttonslinks">
                 <!-- <div (click)="openGitHub()" class="buttonMidias">
                     <img class="ic_midias" src="../../../assets/images/ic_github.png" />
                     <p class="textMidias">Github</p>
                     <a [href]="returnGitHub()" id="githubId" target="_blank" rel="noopener noreferrer" hidden></a>
                 </div> -->
-                <button (click)="openGitHub()" pButton type="button" icon="pi pi-github" label="Github"  >
+                <button (click)="openGitHub()" pButton type="button" icon="pi pi-github" label="Github">
                     <a [href]="returnGitHub()" id="githubId" target="_blank" rel="noopener noreferrer" hidden></a>
                 </button>
                 <!-- <div  class="buttonMidias">
@@ -31,90 +31,127 @@
                     <p class="textMidias">Linkedin</p>
                     
                 </div> -->
-                <button (click)="openLinkedIn()" pButton type="button" icon="pi pi-linkedin" label="LinkedIn"  >
+                <button (click)="openLinkedIn()" pButton type="button" icon="pi pi-linkedin" label="LinkedIn">
                     <a [href]="returnLinkedIn()" id="linkedinId" target="_blank" rel="noopener noreferrer" hidden></a>
                 </button>
             </div>
         </div>
         <div id='Sobre' class="aboutme">
             <p class="text">Olá, sou o Matheus.</p>
-            <img *ngIf="!piscando" src="../../../assets/images/avatar_2.png" style="margin-top: '2.2rem';"/>
-            <img *ngIf="piscando" src="../../../assets/images/avatar_2_piscando.png" style="margin-top: '2.2rem';"/>
-            <p class="textabouteme">Atuo como desenvolvedor desde 2019, tendo contato com diversas tecnologias, sempre em constante evolução.</p>
+            <img *ngIf="!piscando" src="../../../assets/images/avatar_2.png" style="margin-top: '2.2rem';" />
+            <img *ngIf="piscando" src="../../../assets/images/avatar_2_piscando.png" style="margin-top: '2.2rem';" />
+            <p class="textabouteme">Atuo como desenvolvedor desde 2019, tendo contato com diversas tecnologias, sempre
+                em constante evolução.</p>
             <!-- <div style="margin-top: '2rem';" class="buttonMidias">
                 <img  class="ic_midias" style="height: 15px;" src="../../../assets/images/ic_download.png" />
                 <p class="textMidias">Currículo</p>
             </div> -->
-            <button id="animation1" pButton type="button" icon="pi pi-download" label="Currículo" (click)="piscar()"  >
+            <button id="animation1" pButton type="button" icon="pi pi-download" label="Currículo" (click)="piscar()">
             </button>
         </div>
         <div id='Habilidades' [@changeDivSize]="currentState" class="content-tech">
             <div class="tech">
                 <div class="imgs-tech">
-                    <img class="img-projects" class="img-projects" [@fadeImgs]="currentState2" src="../../../assets/images/flutter.png" (click)="showDisplayText('../../../assets/images/flutter.png', 'Eu sei Flutter')" />
-                    <img class="img-projects" [@fadeImgs]="currentState2" src="../../../assets/images/mysql.png" (click)="showDisplayText('../../../assets/images/mysql.png', 'Eu sei MySQL', '1')" />
-                    <img class="img-projects" [@fadeImgs]="currentState2" src="../../../assets/images/angular.png" (click)="showDisplayText('../../../assets/images/angular.png', 'Eu sei Angular')"  />
+                    <img class="img-projects img-projectsresp" [@fadeImgs]="currentState2"
+                        src="../../../assets/images/flutter.png"
+                        (click)="showDisplayText('../../../assets/images/flutter.png', 'Eu sei Flutter')" />
+                    <img class="img-projects img-projectsresp" [@fadeImgs]="currentState2"
+                        src="../../../assets/images/mysql.png"
+                        (click)="showDisplayText('../../../assets/images/mysql.png', 'Eu sei MySQL', '1')" />
+                    <img class="img-projects img-projectsresp" [@fadeImgs]="currentState2"
+                        src="../../../assets/images/angular.png"
+                        (click)="showDisplayText('../../../assets/images/angular.png', 'Eu sei Angular')" />
                 </div>
             </div>
             <div class="tech">
                 <div class="imgs-tech">
-                    <img class="img-projects" [@fadeImgs]="currentState2" src="../../../assets/images/firebase.png" (click)="showDisplayText('../../../assets/images/firebase.png', 'Eu sei Firebase')"  />
-                    <img class="img-projects" [@fadeImgs]="currentState2" src="../../../assets/images/android.png" (click)="showDisplayText('../../../assets/images/android.png', 'Eu sei Android')" />
-                    <img class="img-projects" [@fadeImgs]="currentState2" src="../../../assets/images/ios.png" (click)="showDisplayText('../../../assets/images/ios.png', 'Eu sei IOS')" />
+                    <img class="img-projects img-projectsresp" [@fadeImgs]="currentState2"
+                        src="../../../assets/images/firebase.png"
+                        (click)="showDisplayText('../../../assets/images/firebase.png', 'Eu sei Firebase')" />
+                    <img class="img-projects img-projectsresp" [@fadeImgs]="currentState2"
+                        src="../../../assets/images/android.png"
+                        (click)="showDisplayText('../../../assets/images/android.png', 'Eu sei Android')" />
+                    <img class="img-projects img-projectsresp3" [@fadeImgs]="currentState2"
+                        src="../../../assets/images/ios.png"
+                        (click)="showDisplayText('../../../assets/images/ios.png', 'Eu sei IOS')" />
                 </div>
             </div>
             <div class="tech">
                 <div class="imgs-tech">
-                    <img class="img-projects" [@fadeImgs]="currentState2" src="../../../assets/images/typescript.png" (click)="showDisplayText('../../../assets/images/typescript.png', 'Eu sei Typescript', '1')" />
-                    <img class="img-projects" [@fadeImgs]="currentState2" src="../../../assets/images/react_native.png" (click)="showDisplayText('../../../assets/images/react_native.png', 'Eu sei React Native', '1')" />
-                    <img class="img-projects" [@fadeImgs]="currentState2" src="../../../assets/images/react.png" (click)="showDisplayText('../../../assets/images/react.png', 'Eu sei React', '1')" />
-                    <img class="img-projects" [@fadeImgs]="currentState2" src="../../../assets/images/azure.png" (click)="showDisplayText('../../../assets/images/azure.png', 'Eu sei Azure', '1')" />
+                    <img class="img-projects img-projectsresp2" [@fadeImgs]="currentState2"
+                        src="../../../assets/images/typescript.png"
+                        (click)="showDisplayText('../../../assets/images/typescript.png', 'Eu sei Typescript', '1')" />
+                    <img class="img-projects img-projectsresp2" [@fadeImgs]="currentState2"
+                        src="../../../assets/images/react_native.png"
+                        (click)="showDisplayText('../../../assets/images/react_native.png', 'Eu sei React Native', '1')" />
+                    <img class="img-projects img-projectsresp2" [@fadeImgs]="currentState2"
+                        src="../../../assets/images/react.png"
+                        (click)="showDisplayText('../../../assets/images/react.png', 'Eu sei React', '1')" />
+                    <img class="img-projects img-projectsresp2" [@fadeImgs]="currentState2"
+                        src="../../../assets/images/azure.png"
+                        (click)="showDisplayText('../../../assets/images/azure.png', 'Eu sei Azure', '1')" />
                 </div>
             </div>
         </div>
-        <div id='Projetos'>
-            <p-carousel [value]="images"
-            [numVisible]="3" 
-            [numScroll]="1" [circular]="true" [autoplayInterval]="2000" 
-            [showIndicators]="false">
-                <ng-template let-item pTemplate="item" >
-                    <img [src]="item" />
+        <div class="carosel" id='Projetos'>
+            <p-carousel [value]="images" [numVisible]="widthPage <= 375 ? 1 : 3" [numScroll]="1" [circular]="true"
+                [autoplayInterval]="3500" [showIndicators]="widthPage <= 375 ? true : false"
+                [showNavigators]="widthPage <= 375 ? false : true">
+                <ng-template let-item pTemplate="item">
+                    <img [style]="{'width': widthPage <= 375 ? '100%' : ''}" [src]="item" />
                 </ng-template>
             </p-carousel>
         </div>
         <div class="dev">
-            <img src="../../../assets/images/im_dev.png" style="margin-top: '6rem';" />
+            <img class="dev2" src="../../../assets/images/im_dev.png" style="margin-top: '6rem';" />
         </div>
         <div id='Contato' class="contact">
             <h1>Escolha a forma de contato</h1>
-            <div style="display: flex; flex-direction: row; width: '30%'; justify-content: space-between;">
+            <div class="labelsWppEmail">
                 <div class="labelr">
-                    <p-radioButton (onClick)="flip1()" styleClass="radio-style" name="contato" value="email" [(ngModel)]="selectedValue"></p-radioButton>
-                    <img class="img-contact" *ngIf="selectedValue !== 'email'" src="../../../assets/images/ic_email.svg" />
-                    <img class="img-contact" *ngIf="selectedValue === 'email'" src="../../../assets/images/ic_email_ativo.png" />
+                    <p-radioButton (onClick)="flip1()" styleClass="radio-style" name="contato" value="email"
+                        [(ngModel)]="selectedValue"></p-radioButton>
+                    <img class="img-contact" *ngIf="selectedValue !== 'email'"
+                        src="../../../assets/images/ic_email.svg" />
+                    <img class="img-contact" *ngIf="selectedValue === 'email'"
+                        src="../../../assets/images/ic_email_ativo.png" />
                     <p [class]="selectedValue === 'email' ? 'labelradio' : 'labelradio2'">E-mail</p>
                 </div>
                 <div style="width: '50%';" class="labelr">
-                    <p-radioButton (onClick)="flip2()" name="contato" value="wpp" [(ngModel)]="selectedValue"></p-radioButton>
-                    <img *ngIf="selectedValue !== 'wpp'" class="img-contact" src="../../../assets/images/ic_whatsapp.svg" />
-                    <img *ngIf="selectedValue === 'wpp'" class="img-contact" src="../../../assets/images/ic_whatsapp_ativo.png" />
-                    <p  [class]="selectedValue === 'wpp' ? 'labelradio' : 'labelradio2'">Whatsapp</p>
+                    <p-radioButton (onClick)="flip2()" name="contato" value="wpp"
+                        [(ngModel)]="selectedValue"></p-radioButton>
+                    <img *ngIf="selectedValue !== 'wpp'" class="img-contact"
+                        src="../../../assets/images/ic_whatsapp.svg" />
+                    <img *ngIf="selectedValue === 'wpp'" class="img-contact"
+                        src="../../../assets/images/ic_whatsapp_ativo.png" />
+                    <p [class]="selectedValue === 'wpp' ? 'labelradio' : 'labelradio2'">Whatsapp</p>
                 </div>
             </div>
-            <div *ngIf="!isWpp" style="display: flex; flex-direction: row; width: '40%'; justify-content: space-between;">
+            <div *ngIf="!isWpp" class="firstInputs">
                 <!-- <div class="grid p-fluid">
                     <div class="col-12 md:col-4"> -->
-                        <div class="p-inputgroup">
-                            <input (input)="enableEmail = true" [(ngModel)]="sendEmail.email" [ngClass]="sendEmail.email === '' && enableEmail ? 'inputNotValid' : 'input 1 animationContact'" type="text" pInputText placeholder="E-mail">
-                            <input (input)="enableEmail = true" [(ngModel)]="sendEmail.name" [ngClass]="sendEmail.name === '' && enableEmail ? 'inputNotValid' : 'input 2 animationContact2'" type="text" pInputText placeholder="Nome">         
-                        </div>
-                    <!-- </div> -->
+                <div class="p-inputgroup">
+                    <input (input)="enableEmail = true" [(ngModel)]="sendEmail.email"
+                        [ngClass]="sendEmail.email === '' && enableEmail ? 'inputNotValid' : widthPage >= 375 ? 'input 1 animationContact' : 'input 1'"
+                        type="text" pInputText placeholder="E-mail">
+                    <input (input)="enableEmail = true" [(ngModel)]="sendEmail.name"
+                        [ngClass]="sendEmail.name === '' && enableEmail ? 'inputNotValid' :  widthPage >= 375 ? 'input 2 animationContact2' : 'input 2'"
+                        type="text" pInputText placeholder="Nome">
+                </div>
+                <!-- </div> -->
                 <!-- </div> -->
             </div>
-            <div *ngIf="!isWpp" style="margin-top: 25px;" >
-                <textarea (input)="enableEmail = true" [ngClass]="sendEmail.text === '' && enableEmail ? 'inputNotValid' : 'input 1 animationContact'" [(ngModel)]="sendEmail.text" [autoResize]="true" [cols]="85" [rows]="4" pInputTextarea placeholder="Mensagem"></textarea>
+            <div *ngIf="!isWpp" style="margin-top: 25px;">
+                <textarea (input)="enableEmail = true"
+                    [ngClass]="sendEmail.text === '' && enableEmail ? 'inputNotValid inputresp' : widthPage >= 375 ? 'inputresp input 1 animationContact' : 'inputresp input 1'"
+                    [(ngModel)]="sendEmail.text" [autoResize]="true" [cols]="85" [rows]="4" pInputTextarea
+                    placeholder="Mensagem"></textarea>
             </div>
-            <input [ngClass]="name === '' && enableWpp ? 'wppNotValid' : 'wpp 1 animationContact'" *ngIf="isWpp" type="text" pInputText placeholder="Informe seu nome" [(ngModel)]="name" (input)="enableWpp = true"> 
+            <div *ngIf="isWpp" class="divInput">
+                <input [ngClass]="name === '' && enableWpp ? 'wppNotValid' : widthPage >= 375 ? 'wpp 1 animationContact' : 'wpp 1'" *ngIf="isWpp"
+                    type="text" pInputText placeholder="Informe seu nome" [(ngModel)]="name" (input)="enableWpp = true">
+
+            </div>
             <!-- <div *ngIf="!isWpp" style="margin-top: 30px; margin-bottom: 20px;" class="buttonMidias">
                 <p class="textSend">Enviar</p>
                 <i class="pi pi-send" style="font-size: 1.5rem; color: white; margin-right: 0.7rem;"></i>
@@ -124,38 +161,45 @@
                 <i class="pi pi-send" style="font-size: 1.5rem; color: white; margin-right: 0.7rem;"></i>
                 
             </div> -->
-            <button [disabled]="!returnValidForm()" *ngIf="!isWpp" pButton class="2 animationContact2" type="button" icon="pi pi-send" label="Enviar" (click)="postEmail()"  >
+            <button [disabled]="!returnValidForm()" *ngIf="!isWpp" pButton [class]="widthPage >= 375 ? '2 animationContact2' : '2'" type="button"
+                icon="pi pi-send" label="Enviar" (click)="postEmail()">
             </button>
-            <button class="wppButton 2 animationContact2" *ngIf="isWpp" pButton type="button" icon="pi pi-whatsapp" label="Abrir Whatsapp e enviar" (click)="openWpp()" [disabled]="name === '' ? true : false" >
+            <button [class]="  widthPage >= 375 ? 'wppButton 2 animationContact2' : 'wppButton 2'" *ngIf="isWpp" pButton type="button" icon="pi pi-whatsapp"
+                label="Abrir Whatsapp e enviar" (click)="openWpp()" [disabled]="name === '' ? true : false">
                 <a [href]="returnLinkWpp()" id="wppId" target="_blank" rel="noopener noreferrer" hidden></a>
             </button>
         </div>
         <footer class="footer">
-            <span class="textSend">&copy; Desenvolvido por mim  <i class="pi pi-heart" style="font-size: 1.2rem; color: crimson; margin-left: 5px;"></i></span>
-            
+            <span class="textSend">&copy; Desenvolvido por mim <i class="pi pi-heart"
+                    style="font-size: 1.2rem; color: crimson; margin-left: 5px;"></i></span>
+
         </footer>
     </div>
 </section>
-<p-dialog header="Title" [(visible)]="showDisplay" [blockScroll]="true" [transitionOptions]="'10ms'" [dismissableMask]="true" [modal]="true"
-   [responsive]="true"  [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [style]="{width: '50vw'}" ngClass="teste" >
-   <ng-template pTemplate="header">
+<p-dialog header="Title" [(visible)]="showDisplay" [blockScroll]="true" [transitionOptions]="'10ms'"
+    [dismissableMask]="true" [modal]="true" [responsive]="true" [breakpoints]="{'960px': '75vw', '640px': '100vw'}"
+    [style]="{width: '50vw'}" ngClass="teste">
+    <ng-template pTemplate="header">
         <img [src]="dialog.path" [style]="{'height': dialog.title !== '1' ? '1.2rem' : '3.5rem'}" alt="">
     </ng-template>
     {{dialog.msg}}
     <ng-template pTemplate="footer">
-        <button pButton type="button" icon="pi pi-check" (click)="showDisplay = false" label="Entendi" class="p-button-text returned"></button>
+        <button pButton type="button" icon="pi pi-check" (click)="showDisplay = false" label="Entendi"
+            class="p-button-text returned"></button>
     </ng-template>
 </p-dialog>
 
 <div *ngIf="loading" class="popupMaskChanged">
-    <p-progressSpinner  styleClass="custom-spinner" strokeWidth="8"  animationDuration=".5s"></p-progressSpinner>
+    <p-progressSpinner styleClass="custom-spinner" strokeWidth="8" animationDuration=".5s"></p-progressSpinner>
     <!-- <p-progressSpinner></p-progressSpinner> -->
 </div>
 
-<p-dialog [header]="resultTitle" [(visible)]="showDisplayResult" [blockScroll]="true" [transitionOptions]="'10ms'" [dismissableMask]="true" [modal]="true"
-   [responsive]="true"  [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [style]="{width: '25vw'}" ngClass="teste" >
-        {{resultMsg}}
+<p-dialog [header]="resultTitle" [(visible)]="showDisplayResult" [blockScroll]="true" [transitionOptions]="'10ms'"
+    [dismissableMask]="true" [modal]="true" [responsive]="true" [breakpoints]="{'960px': '75vw', '640px': '100vw'}"
+    [style]="{width: '25vw'}" ngClass="teste">
+    {{resultMsg}}
     <ng-template pTemplate="footer">
-        <button pButton type="button" icon="pi pi-check" (click)="showDisplayResult = false" label="Entendi" class="p-button-text returned"></button>
+        <button pButton type="button" icon="pi pi-check" (click)="showDisplayResult = false" label="Entendi"
+            class="p-button-text returned"></button>
     </ng-template>
 </p-dialog>

@@ -71,6 +71,7 @@ export class InitialpageComponent {
   showDisplayResult: boolean = false;
   resultTitle: string = "";
   resultMsg: string = "";
+  widthPage: number = window.innerWidth;
 
   changeState() {
     if (this.canAnimate === true) {
@@ -140,15 +141,11 @@ export class InitialpageComponent {
 
   flip1() {
     this.currentState3 = 'initial';
-    setTimeout(() => {
-      this.isWpp = false;
-    }, 300)
+    this.isWpp = false;
   }
   flip2() {
     this.currentState3 = 'final';
-    setTimeout(() => {
-      this.isWpp = true;
-    }, 300)
+    this.isWpp = true;
   }
 
   _scrolling() {
@@ -251,35 +248,37 @@ export class InitialpageComponent {
   }
 
   _switchScrollingInContact() {
-    window.addEventListener('scroll', (e: any) => {
-      const element = document.getElementById('Contato');
-      const element2 = document.getElementById('nav');
-      var rect = element?.getBoundingClientRect();
-      var rect2 = element2?.getBoundingClientRect();
-      let doc = window.scrollY;
-      var newrect = rect?.top! - rect2?.top!
-      const el1 = document.getElementsByClassName('1');
-      const el2 = document.getElementsByClassName('2');
-      if (doc >= newrect) {
-        for (let index = 0; index < el1.length; index++) {
-          const element = el1[index];
-          element.classList.add('animationContact');
+    if (this.widthPage >= 375) {
+      window.addEventListener('scroll', (e: any) => {
+        const element = document.getElementById('Contato');
+        const element2 = document.getElementById('nav');
+        var rect = element?.getBoundingClientRect();
+        var rect2 = element2?.getBoundingClientRect();
+        let doc = window.scrollY;
+        var newrect = rect?.top! - rect2?.top!
+        const el1 = document.getElementsByClassName('1');
+        const el2 = document.getElementsByClassName('2');
+        if (doc >= newrect) {
+          for (let index = 0; index < el1.length; index++) {
+            const element = el1[index];
+            element.classList.add('animationContact');
+          }
+          for (let index = 0; index < el2.length; index++) {
+            const element = el2[index];
+            element.classList.add('animationContact2');
+          }
+        } else {
+          for (let index = 0; index < el1.length; index++) {
+            const element = el1[index];
+            element.classList.remove('animationContact');
+          }
+          for (let index = 0; index < el2.length; index++) {
+            const element = el2[index];
+            element.classList.remove('animationContact2');
+          }
         }
-        for (let index = 0; index < el2.length; index++) {
-          const element = el2[index];
-          element.classList.add('animationContact2');
-        }
-      } else {
-        for (let index = 0; index < el1.length; index++) {
-          const element = el1[index];
-          element.classList.remove('animationContact');
-        }
-        for (let index = 0; index < el2.length; index++) {
-          const element = el2[index];
-          element.classList.remove('animationContact2');
-        }
-      }
-    })
+      })
+    }
   }
 
   piscar() {
