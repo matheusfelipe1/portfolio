@@ -16,17 +16,20 @@
         </div>
         <div *ngIf="widthPage <= 375" id="nav" class="header">
             <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-                <a style="color: white;" class="navbar-brand" >Portfólio Matheus</a>
-                <button class="navbar-toggler d-lg-none" type="button" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="navbarsExampleDefault" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
+                <a style="color: white;" class="navbar-brand">Portfólio Matheus</a>
+                <button class="navbar-toggler d-lg-none" type="button" (click)="isCollapsed = !isCollapsed"
+                    [attr.aria-expanded]="!isCollapsed" aria-controls="navbarsExampleDefault"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
-              
+
                 <div class="collapse navbar-collapse" id="navbarsExampleDefault" [ngbCollapse]="isCollapsed">
-                  <ul *ngFor="let title of nav" class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                      <a (click)="isCollapsed = !isCollapsed; scroll(title);" class="nav-link" >{{title.label}}<span class="sr-only">(current)</span></a>
-                    </li>
-                    <!-- <li class="nav-item">
+                    <ul *ngFor="let title of nav" class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a (click)="isCollapsed = !isCollapsed; scroll(title);"
+                                class="nav-link">{{title.label}}<span class="sr-only">(current)</span></a>
+                        </li>
+                        <!-- <li class="nav-item">
                       <a class="nav-link" href="#">Settings</a>
                     </li>
                     <li class="nav-item">
@@ -35,9 +38,9 @@
                     <li class="nav-item">
                       <a class="nav-link" href="#">Help</a>
                     </li> -->
-                  </ul>
+                    </ul>
                 </div>
-              </nav>
+            </nav>
         </div>
         <div id='Início' class="imagem">
             <img class="imgName" src="../../../assets/images/im_nome.png" />
@@ -140,7 +143,8 @@
                         src="../../../assets/images/ic_email.svg" />
                     <img class="img-contact" *ngIf="selectedValue === 'email'"
                         src="../../../assets/images/ic_email_ativo.png" /> -->
-                    <i class="pi pi-envelope" [ngClass]="selectedValue === 'email' ? 'img-contat-icon-selected' : 'img-contat-icon'"></i>
+                    <i class="pi pi-envelope"
+                        [ngClass]="selectedValue === 'email' ? 'img-contat-icon-selected' : 'img-contat-icon'"></i>
                     <p [class]="selectedValue === 'email' ? 'labelradio' : 'labelradio2'">E-mail</p>
                 </div>
                 <div style="width: '50%';" class="labelr">
@@ -150,7 +154,8 @@
                         src="../../../assets/images/ic_whatsapp.svg" />
                     <img *ngIf="selectedValue === 'wpp'" class="img-contact"
                         src="../../../assets/images/ic_whatsapp_ativo.png" /> -->
-                    <i class="pi pi-whatsapp" [ngClass]="selectedValue === 'wpp' ? 'img-contat-icon-selected' : 'img-contat-icon'"></i>
+                    <i class="pi pi-whatsapp"
+                        [ngClass]="selectedValue === 'wpp' ? 'img-contat-icon-selected' : 'img-contat-icon'"></i>
                     <p [class]="selectedValue === 'wpp' ? 'labelradio' : 'labelradio2'">Whatsapp</p>
                 </div>
             </div>
@@ -175,8 +180,10 @@
                     placeholder="Mensagem"></textarea>
             </div>
             <div *ngIf="isWpp" class="divInput">
-                <input [ngClass]="name === '' && enableWpp ? 'wppNotValid' : widthPage >= 375 ? 'wpp 1 animationContact' : 'wpp 1'" *ngIf="isWpp"
-                    type="text" pInputText placeholder="Informe seu nome" [(ngModel)]="name" (input)="enableWpp = true">
+                <input
+                    [ngClass]="name === '' && enableWpp ? 'wppNotValid' : widthPage >= 375 ? 'wpp 1 animationContact' : 'wpp 1'"
+                    *ngIf="isWpp" type="text" pInputText placeholder="Informe seu nome" [(ngModel)]="name"
+                    (input)="enableWpp = true">
 
             </div>
             <!-- <div *ngIf="!isWpp" style="margin-top: 30px; margin-bottom: 20px;" class="buttonMidias">
@@ -188,11 +195,13 @@
                 <i class="pi pi-send" style="font-size: 1.5rem; color: white; margin-right: 0.7rem;"></i>
                 
             </div> -->
-            <button [disabled]="!returnValidForm()" *ngIf="!isWpp" pButton [class]="widthPage >= 375 ? '2 animationContact2' : '2'" type="button"
-                icon="pi pi-send" label="Enviar" (click)="postEmail()">
+            <button [disabled]="!returnValidForm()" *ngIf="!isWpp" pButton
+                [class]="widthPage >= 375 ? '2 animationContact2' : '2'" type="button" icon="pi pi-send" label="Enviar"
+                (click)="postEmail()">
             </button>
-            <button [class]="  widthPage >= 375 ? 'wppButton 2 animationContact2' : 'wppButton 2'" *ngIf="isWpp" pButton type="button" icon="pi pi-whatsapp"
-                label="Abrir Whatsapp e enviar" (click)="openWpp()" [disabled]="name === '' ? true : false">
+            <button [class]="  widthPage >= 375 ? 'wppButton 2 animationContact2' : 'wppButton 2'" *ngIf="isWpp" pButton
+                type="button" icon="pi pi-whatsapp" label="Abrir Whatsapp e enviar" (click)="openWpp()"
+                [disabled]="name === '' ? true : false">
                 <a [href]="returnLinkWpp()" id="wppId" target="_blank" rel="noopener noreferrer" hidden></a>
             </button>
         </div>
@@ -204,8 +213,8 @@
     </div>
 </section>
 <p-dialog header="Title" [(visible)]="showDisplay" [blockScroll]="true" [transitionOptions]="'10ms'"
-    [dismissableMask]="true" [modal]="true" [responsive]="true" [breakpoints]="{'960px': '75vw', '640px': '100vw'}"
-    [style]="{width: '50vw'}" ngClass="teste">
+    [dismissableMask]="true" [modal]="true" [responsive]="true" [style]="{width:  widthPage <= 375 ?'38rem' : '80rem'}"
+    ngClass="teste">
     <ng-template pTemplate="header">
         <img [src]="dialog.path" [style]="{'height': dialog.title !== '1' ? '1.2rem' : '3.5rem'}" alt="">
     </ng-template>
@@ -222,8 +231,8 @@
 </div>
 
 <p-dialog [header]="resultTitle" [(visible)]="showDisplayResult" [blockScroll]="true" [transitionOptions]="'10ms'"
-    [dismissableMask]="true" [modal]="true" [responsive]="true" [breakpoints]="{'960px': '75vw', '640px': '100vw'}"
-    [style]="{width: '25vw'}" ngClass="teste">
+    [dismissableMask]="true" [modal]="true" [responsive]="true" [style]="{width: widthPage <= 375 ?'38rem' : '80rem'}"
+    ngClass="teste">
     {{resultMsg}}
     <ng-template pTemplate="footer">
         <button pButton type="button" icon="pi pi-check" (click)="showDisplayResult = false" label="Entendi"
