@@ -266,7 +266,7 @@ export class InitialpageComponent {
   }
 
   _switchScrollingInContact() {
-    if (this.widthPage >= 375) {
+    if (this.widthPage > 768) {
       window.addEventListener('scroll', (e: any) => {
         const element = document.getElementById('Contato');
         const element2 = document.getElementById('nav');

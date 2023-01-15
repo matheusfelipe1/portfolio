@@ -634,7 +634,7 @@ div .animationContact2 {
 }
 
 /* Responsividades */
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 768px) {
     .nav {
         display: flex;
         flex-direction: row;
