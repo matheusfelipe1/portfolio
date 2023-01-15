@@ -16,6 +16,7 @@ import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
 import { HttpClientModule } from '@angular/common/http';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
     DialogModule,
     ButtonModule,
     HttpClientModule,
-    ProgressSpinnerModule
+    ProgressSpinnerModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,7 +5,7 @@
     height: 3.3rem;
     background-color: #000000;
     position: fixed;
-    width: 100%;
+    width: 100vw;
 }
 
 .nav {
@@ -267,6 +267,20 @@
     margin-top: 20px;
 }
 
+.img-contat-icon {
+    font-size: 1.3rem;
+    color: white;
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.img-contat-icon-selected {
+    font-size: 1.3rem;
+    color: #00FFFF;
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
 .labelradio {
     color: var(--unnamed-color-00ffff);
     text-align: left;
@@ -276,6 +290,7 @@
     color: #00FFFF;
     opacity: 1;
     margin-left: 10px;
+    margin-top: 0.7rem;
 }
 
 .labelradio2 {
@@ -287,6 +302,7 @@
     color: #FFFFFF;
     opacity: 1;
     margin-left: 10px;
+    margin-top: 0.7rem;
 }
 
 .p-inputtext.input {
@@ -455,16 +471,12 @@ h1 {
 }
 
 div .animationContact {
-    position: relative; 
+    position: relative;
     animation-name: firstInput;
     animation-duration: 2s;
     animation-delay: 0s;
 }
 
-section { 
-    height: 100%; 
-    margin: 0; 
-}
 
 div .animationContact2 {
     position: relative;
@@ -866,6 +878,28 @@ div .animationContact2 {
         margin-right: 12px;
         width: 37rem;
         margin-top: 2rem;
+    }
+    .p-inputtext.wppNotValid {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        font-size: 1rem;
+        color: #FFFFFF;
+        background: #0000;
+        padding: 0.75rem 0.75rem;
+        border: 1px solid #f80606;
+        transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+        -webkit-appearance: none;
+        appearance: none;
+        border-radius: 6px;
+        margin-right: 12px;
+        margin-top: 2rem;
+        width: 37rem;
+    }
+    :host ::ng-deep .p-dialog {
+        position: relative;
+        animation-name: dialog;
+        animation-duration: 1s;
+        animation-delay: 0s;
+        width: 80rem;
     }
 
 }

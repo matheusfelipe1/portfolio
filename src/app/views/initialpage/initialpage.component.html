@@ -1,18 +1,43 @@
 <section [class]="showDisplay === true ? 'indisplay' : ''">
     <div class="all-content" id="divInitial">
-        <div id="nav" class="header">
+        <div *ngIf="widthPage >= 375" id="nav" class="header">
             <div class="nav">
                 <div *ngFor="let title of nav">
                     <div class="onNavHover" (click)="onChangeNav(title)">
                         <div *ngIf="title.value" class="title">{{title.label}}</div>
                         <div *ngIf="!title.value" class="title2">{{title.label}}</div>
-                        <div style="height: 1.1rem;"></div>
+                        <div style="height: 0.95rem;"></div>
                         <div *ngIf="title.value" class="selectNav"></div>
                         <div *ngIf="!title.value" class="NoSelectNav"></div>
                     </div>
                 </div>
             </div>
 
+        </div>
+        <div *ngIf="widthPage <= 375" id="nav" class="header">
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <a style="color: white;" class="navbar-brand" >Portfólio Matheus</a>
+                <button class="navbar-toggler d-lg-none" type="button" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="navbarsExampleDefault" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarsExampleDefault" [ngbCollapse]="isCollapsed">
+                  <ul *ngFor="let title of nav" class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      <a (click)="isCollapsed = !isCollapsed; scroll(title);" class="nav-link" >{{title.label}}<span class="sr-only">(current)</span></a>
+                    </li>
+                    <!-- <li class="nav-item">
+                      <a class="nav-link" href="#">Settings</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Help</a>
+                    </li> -->
+                  </ul>
+                </div>
+              </nav>
         </div>
         <div id='Início' class="imagem">
             <img class="imgName" src="../../../assets/images/im_nome.png" />
@@ -111,19 +136,21 @@
                 <div class="labelr">
                     <p-radioButton (onClick)="flip1()" styleClass="radio-style" name="contato" value="email"
                         [(ngModel)]="selectedValue"></p-radioButton>
-                    <img class="img-contact" *ngIf="selectedValue !== 'email'"
+                    <!-- <img class="img-contact" *ngIf="selectedValue !== 'email'"
                         src="../../../assets/images/ic_email.svg" />
                     <img class="img-contact" *ngIf="selectedValue === 'email'"
-                        src="../../../assets/images/ic_email_ativo.png" />
+                        src="../../../assets/images/ic_email_ativo.png" /> -->
+                    <i class="pi pi-envelope" [ngClass]="selectedValue === 'email' ? 'img-contat-icon-selected' : 'img-contat-icon'"></i>
                     <p [class]="selectedValue === 'email' ? 'labelradio' : 'labelradio2'">E-mail</p>
                 </div>
                 <div style="width: '50%';" class="labelr">
                     <p-radioButton (onClick)="flip2()" name="contato" value="wpp"
                         [(ngModel)]="selectedValue"></p-radioButton>
-                    <img *ngIf="selectedValue !== 'wpp'" class="img-contact"
+                    <!-- <img *ngIf="selectedValue !== 'wpp'" class="img-contact"
                         src="../../../assets/images/ic_whatsapp.svg" />
                     <img *ngIf="selectedValue === 'wpp'" class="img-contact"
-                        src="../../../assets/images/ic_whatsapp_ativo.png" />
+                        src="../../../assets/images/ic_whatsapp_ativo.png" /> -->
+                    <i class="pi pi-whatsapp" [ngClass]="selectedValue === 'wpp' ? 'img-contat-icon-selected' : 'img-contat-icon'"></i>
                     <p [class]="selectedValue === 'wpp' ? 'labelradio' : 'labelradio2'">Whatsapp</p>
                 </div>
             </div>

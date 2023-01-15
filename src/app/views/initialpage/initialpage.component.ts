@@ -66,12 +66,13 @@ export class InitialpageComponent {
   enableWpp: boolean = false;
   enableEmail: boolean = false;
   sendEmail: SendEmailModel = {};
-  piscando: boolean = false;
+  piscando: boolean = true;
   loading: boolean = false;
   showDisplayResult: boolean = false;
   resultTitle: string = "";
   resultMsg: string = "";
   widthPage: number = window.innerWidth;
+  isCollapsed: boolean = true;
 
   changeState() {
     if (this.canAnimate === true) {
@@ -122,6 +123,9 @@ export class InitialpageComponent {
       "../../../assets/images/6.png",
       "../../../assets/images/7.png",
     ];
+    setTimeout(() => {
+      this.piscando = false;
+    }, 1000)
     this._scrolling();
     this._switchNavWhenScrolling();
     this._switchScrollingInContact();
@@ -200,7 +204,21 @@ export class InitialpageComponent {
 
   _offsetPositionInPage(data: NavModel) {
     const find = document.getElementById(data.label!)?.offsetTop
-    window.scrollTo({ left: 0, top: find, behavior: 'smooth' })
+    if (data.label === 'Habilidades' || data.label === 'Projetos') {
+      window.scrollTo({ top: find! - 160, behavior: 'smooth' });
+    } else {
+      window.scrollTo({ top: find, behavior: 'smooth' });
+    }
+  }
+
+  scroll(data: NavModel) {
+    const find = document.getElementById(data.label!)?.offsetTop
+    if (data.label === 'Habilidades' || data.label === 'Projetos') {
+      window.scrollTo({ top: find! - 160, behavior: 'smooth' });
+    } else {
+      window.scrollTo({ top: find, behavior: 'smooth' });
+    }
+
   }
 
   showDisplayText(path: string, msg: string, title?: string) {
@@ -285,8 +303,9 @@ export class InitialpageComponent {
     this.piscando = true;
     setTimeout(() => {
       this.piscando = false;
+      this.dowloadCv()
     }, 700);
-    this.dowloadCv()
+
   }
 
   postEmail(): void {
