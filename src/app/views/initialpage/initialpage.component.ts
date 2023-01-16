@@ -76,6 +76,16 @@ export class InitialpageComponent {
   aboutme1: string = Enviroments.aboutme1;
   aboutme2: string = Enviroments.aboutme2;
   aboutme3: string = Enviroments.aboutme3;
+  flutter: string = Enviroments.flutter;
+  mysql: string = Enviroments.mysql;
+  angular: string = Enviroments.angular;
+  firebase: string = Enviroments.firebase;
+  android: string = Enviroments.android;
+  apple: string = Enviroments.apple;
+  typescript: string = Enviroments.typescript;
+  reactNative: string = Enviroments.reactNative;
+  reactjs: string = Enviroments.reactjs;
+  azure: string = Enviroments.azure;
 
   changeState() {
     if (this.canAnimate === true) {

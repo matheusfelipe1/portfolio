@@ -17,16 +17,16 @@
         <div *ngIf="widthPage < 768" id="nav" class="header">
             <nav style="padding: 12px;" class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
                 <a style="color: white; margin-left: 0.7rem;" class="navbar-brand">Portfólio Matheus</a>
-                <button style="margin-right: 0.9rem;"  class="navbar-toggler d-lg-none" type="button" (click)="isCollapsed = !isCollapsed"
-                    [attr.aria-expanded]="!isCollapsed" aria-controls="navbarsExampleDefault"
-                    aria-label="Toggle navigation">
+                <button style="margin-right: 0.9rem;" class="navbar-toggler d-lg-none" type="button"
+                    (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed"
+                    aria-controls="navbarsExampleDefault" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarsExampleDefault" [ngbCollapse]="isCollapsed">
                     <ul *ngFor="let title of nav" class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a (click)="isCollapsed = !isCollapsed; scroll(title);"  style="margin-left: 1.2rem;"
+                            <a (click)="isCollapsed = !isCollapsed; scroll(title);" style="margin-left: 1.2rem;"
                                 class="nav-link">{{title.label}}<span class="sr-only">(current)</span></a>
                         </li>
                     </ul>
@@ -60,42 +60,42 @@
                 <div class="imgs-tech">
                     <img class="img-projects img-projectsresp" [@fadeImgs]="currentState2"
                         src="../../../assets/images/flutter.png"
-                        (click)="showDisplayText('../../../assets/images/flutter.png', 'Eu sei Flutter')" />
+                        (click)="showDisplayText('../../../assets/images/flutter.png', flutter)" />
                     <img class="img-projects img-projectsresp" [@fadeImgs]="currentState2"
                         src="../../../assets/images/mysql.png"
-                        (click)="showDisplayText('../../../assets/images/mysql.png', 'Eu sei MySQL', '1')" />
+                        (click)="showDisplayText('../../../assets/images/mysql.png', mysql, '1')" />
                     <img class="img-projects img-projectsresp" [@fadeImgs]="currentState2"
                         src="../../../assets/images/angular.png"
-                        (click)="showDisplayText('../../../assets/images/angular.png', 'Eu sei Angular')" />
+                        (click)="showDisplayText('../../../assets/images/angular.png', angular)" />
                 </div>
             </div>
             <div class="tech">
                 <div class="imgs-tech">
                     <img class="img-projects img-projectsresp" [@fadeImgs]="currentState2"
                         src="../../../assets/images/firebase.png"
-                        (click)="showDisplayText('../../../assets/images/firebase.png', 'Eu sei Firebase')" />
+                        (click)="showDisplayText('../../../assets/images/firebase.png', firebase)" />
                     <img class="img-projects img-projectsresp" [@fadeImgs]="currentState2"
                         src="../../../assets/images/android.png"
-                        (click)="showDisplayText('../../../assets/images/android.png', 'Eu sei Android')" />
+                        (click)="showDisplayText('../../../assets/images/android.png', android)" />
                     <img class="img-projects img-projectsresp3" [@fadeImgs]="currentState2"
                         src="../../../assets/images/ios.png"
-                        (click)="showDisplayText('../../../assets/images/ios.png', 'Eu sei IOS')" />
+                        (click)="showDisplayText('../../../assets/images/ios.png', apple)" />
                 </div>
             </div>
             <div class="tech">
                 <div class="imgs-tech">
                     <img class="img-projects img-projectsresp2" [@fadeImgs]="currentState2"
                         src="../../../assets/images/typescript.png"
-                        (click)="showDisplayText('../../../assets/images/typescript.png', 'Eu sei Typescript', '1')" />
+                        (click)="showDisplayText('../../../assets/images/typescript.png', typescript, '1')" />
                     <img class="img-projects img-projectsresp2" [@fadeImgs]="currentState2"
                         src="../../../assets/images/react_native.png"
-                        (click)="showDisplayText('../../../assets/images/react_native.png', 'Eu sei React Native', '1')" />
+                        (click)="showDisplayText('../../../assets/images/react_native.png', reactNative, '1')" />
                     <img class="img-projects img-projectsresp2" [@fadeImgs]="currentState2"
                         src="../../../assets/images/react.png"
-                        (click)="showDisplayText('../../../assets/images/react.png', 'Eu sei React', '1')" />
+                        (click)="showDisplayText('../../../assets/images/react.png', reactjs, '1')" />
                     <img class="img-projects img-projectsresp2" [@fadeImgs]="currentState2"
                         src="../../../assets/images/azure.png"
-                        (click)="showDisplayText('../../../assets/images/azure.png', 'Eu sei Azure', '1')" />
+                        (click)="showDisplayText('../../../assets/images/azure.png', azure, '1')" />
                 </div>
             </div>
         </div>
@@ -104,7 +104,8 @@
                 [autoplayInterval]="3500" [showIndicators]="widthPage <= 768 ? true : false"
                 [showNavigators]="widthPage <= 768 ? false : true">
                 <ng-template let-item pTemplate="item">
-                    <img [style]="{'width': widthPage <= 768 ? '100%' : '100%', 'padding' : widthPage <= 768 ? '' : '10px'}" [src]="item" />
+                    <img [style]="{'width': widthPage <= 768 ? '100%' : '100%', 'padding' : widthPage <= 768 ? '' : '10px'}"
+                        [src]="item" />
                 </ng-template>
             </p-carousel>
         </div>
@@ -124,9 +125,9 @@
                 <div (click)="flip2()" style="width: '50%';" class="labelr">
                     <p-radioButton (onClick)="flip2()" name="contato" value="wpp"
                         [(ngModel)]="selectedValue"></p-radioButton>
-                    <i class="pi pi-whatsapp" 
+                    <i class="pi pi-whatsapp"
                         [ngClass]="selectedValue === 'wpp' ? 'img-contat-icon-selected' : 'img-contat-icon'"></i>
-                    <p   [class]="selectedValue === 'wpp' ? 'labelradio' : 'labelradio2'">Whatsapp</p>
+                    <p [class]="selectedValue === 'wpp' ? 'labelradio' : 'labelradio2'">Whatsapp</p>
                 </div>
             </div>
             <div *ngIf="!isWpp" class="firstInputs">
@@ -150,18 +151,15 @@
                     placeholder="Mensagem"></textarea>
             </div>
             <div *ngIf="isWpp" class="divInput">
-                <input
-                    [ngClass]="name === '' && enableWpp ? 'wppNotValid' : 'wpp 1 animationContact' "
-                    *ngIf="isWpp" type="text" pInputText placeholder="Informe seu nome" [(ngModel)]="name"
-                    (input)="enableWpp = true">
+                <input [ngClass]="name === '' && enableWpp ? 'wppNotValid' : 'wpp 1 animationContact' " *ngIf="isWpp"
+                    type="text" pInputText placeholder="Informe seu nome" [(ngModel)]="name" (input)="enableWpp = true">
 
             </div>
-            <button [disabled]="!returnValidForm()" *ngIf="!isWpp" pButton
-                [class]="'2 animationContact2' " type="button" icon="pi pi-send" label="Enviar"
-                (click)="postEmail()">
+            <button [disabled]="!returnValidForm()" *ngIf="!isWpp" pButton [class]="'2 animationContact2' "
+                type="button" icon="pi pi-send" label="Enviar" (click)="postEmail()">
             </button>
-            <button [class]="  'wppButton 2 animationContact2' " *ngIf="isWpp" pButton
-                type="button" icon="pi pi-whatsapp" label="Abrir Whatsapp e enviar" (click)="openWpp()"
+            <button [class]="  'wppButton 2 animationContact2' " *ngIf="isWpp" pButton type="button"
+                icon="pi pi-whatsapp" label="Abrir Whatsapp e enviar" (click)="openWpp()"
                 [disabled]="name === '' ? true : false">
                 <a [href]="returnLinkWpp()" id="wppId" target="_blank" rel="noopener noreferrer" hidden></a>
             </button>
@@ -174,13 +172,13 @@
     </div>
 </section>
 <p-dialog header="Title" [(visible)]="showDisplay" [blockScroll]="true" [transitionOptions]="'10ms'"
-    [dismissableMask]="true" [modal]="true" [responsive]="true"  ngClass="teste">
+    [dismissableMask]="true" [modal]="true" [responsive]="true" ngClass="teste">
     <ng-template pTemplate="header">
         <img [src]="dialog.path" [style]="{'height': dialog.title !== '1' ? '1.2rem' : '3.5rem'}" alt="">
     </ng-template>
-    {{dialog.msg}}
+    <h4 style="margin-top: 16px;">{{dialog.msg}}</h4>
     <ng-template pTemplate="footer">
-        <button pButton type="button" icon="pi pi-check" (click)="showDisplay = false" label="Entendi"
+        <button pButton type="button" icon="pi pi-check" (click)="showDisplay = false" label="OK"
             class="p-button-text returned"></button>
     </ng-template>
 </p-dialog>
@@ -190,10 +188,10 @@
 </div>
 
 <p-dialog [header]="resultTitle" [(visible)]="showDisplayResult" [blockScroll]="true" [transitionOptions]="'10ms'"
-    [dismissableMask]="true" [modal]="true" [responsive]="true"     ngClass="teste">
+    [dismissableMask]="true" [modal]="true" [responsive]="true" ngClass="teste">
     {{resultMsg}}
     <ng-template pTemplate="footer">
-        <button pButton type="button" icon="pi pi-check" (click)="showDisplayResult = false" label="Entendi"
+        <button pButton type="button" icon="pi pi-check" (click)="showDisplayResult = false" label="OK"
             class="p-button-text returned"></button>
     </ng-template>
 </p-dialog>
