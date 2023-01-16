@@ -1,6 +1,6 @@
 <section [class]="showDisplay === true ? 'indisplay' : ''">
     <div class="all-content" id="divInitial">
-        <div *ngIf="widthPage > 768" id="nav" class="header">
+        <div *ngIf="widthPage >= 768" id="nav" class="header">
             <div class="nav">
                 <div *ngFor="let title of nav">
                     <div class="onNavHover" (click)="onChangeNav(title)">
@@ -14,7 +14,7 @@
             </div>
 
         </div>
-        <div *ngIf="widthPage <= 768" id="nav" class="header">
+        <div *ngIf="widthPage < 768" id="nav" class="header">
             <nav style="padding: 12px;" class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
                 <a style="color: white; margin-left: 0.7rem;" class="navbar-brand">Portfólio Matheus</a>
                 <button style="margin-right: 0.9rem;"  class="navbar-toggler d-lg-none" type="button" (click)="isCollapsed = !isCollapsed"
