@@ -160,11 +160,38 @@ export class InitialpageComponent {
     this.currentState3 = 'initial';
     this.isWpp = false;
     this.selectedValue = 'email';
+    // animacao
+    setTimeout(() => {
+      const el1 = document.getElementById('1');
+      console.log(el1)
+      el1?.classList.add('animationContact');
+      const el2 = document.getElementById('2');
+      el2?.classList.add('animationContact2');
+      const el3 = document.getElementById('3');
+      el3?.classList.add('animationContact');
+      const el4 = document.getElementById('4');
+      el4?.classList.remove('animationContact2');
+    }, 10)
+
+
   }
   flip2() {
     this.currentState3 = 'final';
     this.isWpp = true;
     this.selectedValue = 'wpp';
+    // animacao
+    setTimeout(() => {
+      const el1 = document.getElementById('1');
+      console.log(el1)
+      el1?.classList.remove('animationContact');
+      const el2 = document.getElementById('2');
+      el2?.classList.remove('animationContact2');
+      const el3 = document.getElementById('3');
+      el3?.classList.remove('animationContact');
+      const el4 = document.getElementById('4');
+      el4?.classList.add('animationContact');
+    }, 10)
+
   }
 
   _scrolling() {
@@ -282,35 +309,35 @@ export class InitialpageComponent {
 
   _switchScrollingInContact() {
     // if (this.widthPage > 768) {
-      window.addEventListener('scroll', (e: any) => {
-        const element = document.getElementById('Contato');
-        const element2 = document.getElementById('nav');
-        var rect = element?.getBoundingClientRect();
-        var rect2 = element2?.getBoundingClientRect();
-        let doc = window.scrollY;
-        var newrect = rect?.top! - rect2?.top!
-        const el1 = document.getElementsByClassName('1');
-        const el2 = document.getElementsByClassName('2');
-        if (doc >= newrect) {
-          for (let index = 0; index < el1.length; index++) {
-            const element = el1[index];
-            element.classList.add('animationContact');
-          }
-          for (let index = 0; index < el2.length; index++) {
-            const element = el2[index];
-            element.classList.add('animationContact2');
-          }
-        } else {
-          for (let index = 0; index < el1.length; index++) {
-            const element = el1[index];
-            element.classList.remove('animationContact');
-          }
-          for (let index = 0; index < el2.length; index++) {
-            const element = el2[index];
-            element.classList.remove('animationContact2');
-          }
+    window.addEventListener('scroll', (e: any) => {
+      const element = document.getElementById('Contato');
+      const element2 = document.getElementById('nav');
+      var rect = element?.getBoundingClientRect();
+      var rect2 = element2?.getBoundingClientRect();
+      let doc = window.scrollY;
+      var newrect = rect?.top! - rect2?.top!
+      const el1 = document.getElementsByClassName('1');
+      const el2 = document.getElementsByClassName('2');
+      if (doc >= newrect) {
+        for (let index = 0; index < el1.length; index++) {
+          const element = el1[index];
+          element.classList.add('animationContact');
         }
-      })
+        for (let index = 0; index < el2.length; index++) {
+          const element = el2[index];
+          element.classList.add('animationContact2');
+        }
+      } else {
+        for (let index = 0; index < el1.length; index++) {
+          const element = el1[index];
+          element.classList.remove('animationContact');
+        }
+        for (let index = 0; index < el2.length; index++) {
+          const element = el2[index];
+          element.classList.remove('animationContact2');
+        }
+      }
+    })
     // }
   }
 

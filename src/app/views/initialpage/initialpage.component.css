@@ -270,14 +270,14 @@
 }
 
 .img-contat-icon {
-    font-size: 1.3rem;
+    font-size: 0.9rem;
     color: white;
     margin-top: 1rem;
     margin-left: 1rem;
 }
 
 .img-contat-icon-selected {
-    font-size: 1.3rem;
+    font-size: 0.9rem;
     color: #00FFFF;
     margin-top: 1rem;
     margin-left: 1rem;
@@ -287,7 +287,7 @@
     color: var(--unnamed-color-00ffff);
     text-align: left;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 18px;
+    font-size: 0.8rem;
     letter-spacing: 0px;
     color: #00FFFF;
     opacity: 1;
@@ -299,7 +299,7 @@
     color: var(--unnamed-color-00ffff);
     text-align: left;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 18px;
+    font-size: 0.8rem;
     letter-spacing: 0px;
     color: #FFFFFF;
     opacity: 1;
@@ -581,15 +581,15 @@ div .animationContact2 {
     width: 52vw;
 }
 
-.img-projectsresp {
+.img-projects > .resp {
     width: 9rem;
 }
 
-.img-projectsresp2 {
+.img-projects > .resp2 {
     height: 5rem;
 }
 
-.img-projectsresp3 {
+.img-projects > .resp3 {
     height: 2.2rem;
 }
 
@@ -676,7 +676,7 @@ div .animationContact2 {
     .imagem {
         background-image: url("../../../assets/images/imagem.png");
         background-color: #cccccc;
-        /* height: 50rem; */
+        height: 70vh;
         margin-left: -0.5rem;
         margin-right: -0.5rem;
         background-position: center;
@@ -687,11 +687,11 @@ div .animationContact2 {
         justify-content: center;
         align-items: center;
         align-content: center;
-        width: 43.5rem;
+        width: 103vw;
     }
 
     .imgName {
-        width: 33rem;
+        width: 23rem;
     }
 
     .profission {
@@ -700,10 +700,11 @@ div .animationContact2 {
         color: var(--unnamed-color-ffffff);
         text-align: center;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-size: 34px;
+        font-size: 23px;
         letter-spacing: 2px;
         color: #FFFFFF;
         opacity: 1;
+        margin-top: 2rem;
     }
 
     .buttonslinks {
@@ -712,6 +713,29 @@ div .animationContact2 {
         justify-content: space-between;
         width: 23%;
         margin-top: 0.7rem;
+    }
+
+    .p-button {
+        color: #ffffff;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid #FFFFFF;
+        padding: 0.2rem 1rem;
+        font-size: 0.7rem;
+        transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+        border-radius: 2.5rem;
+        margin-top: 0.8rem;
+    }
+
+    .p-button.wppButton {
+        color: #ffffff;
+        background: #22c55e;
+        border: 1px solid #37f303;
+        padding: 0.2rem 1rem;
+        font-size: 0.7rem;
+        transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+        border-radius: 2.5rem;
+        margin-top: 0.8rem;
+        margin-top: 1.7rem;
     }
 
     .aboutme {
@@ -726,7 +750,7 @@ div .animationContact2 {
         justify-content: center;
         align-items: center;
         align-content: center;
-        width: 43.5rem;
+        width: 103vw;
     }
 
     .aboutme .text {
@@ -735,7 +759,7 @@ div .animationContact2 {
         color: var(--unnamed-color-f25790);
         text-align: center;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-size: 27px;
+        font-size: 16.5px;
         letter-spacing: 0px;
         color: #F25790;
         opacity: 1;
@@ -747,7 +771,7 @@ div .animationContact2 {
         color: var(--unnamed-color-ffffff);
         text-align: center;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-size: 19.5px;
+        font-size: 14px;
         letter-spacing: 0px;
         color: #FFFFFF;
         opacity: 1;
@@ -761,18 +785,17 @@ div .animationContact2 {
         justify-content: top;
         align-items: center;
         align-content: center;
-        width: 42rem;
-        /* height: 20rem; */
+        width: 101.2vw;
     }
 
     .tech {
         border-radius: 121px;
         opacity: 1;
-        width: 102%;
-        height: 40%;
+        width: 100%;
+        height: 30%;
         background-color: #FFFFFF;
         margin-top: -7rem;
-        margin-left: 1.02rem;
+        /* margin-left: 1.02rem; */
         display: flex;
         flex-direction: column;
         justify-content: top;
@@ -781,15 +804,25 @@ div .animationContact2 {
     }
 
     .img-projectsresp {
-        width: 9rem;
+        width: 5rem;
     }
 
     .img-projectsresp2 {
-        height: 5rem;
+        height: 3rem;
     }
 
     .img-projectsresp3 {
-        height: 2.2rem;
+        height: 1.5rem;
+    }
+
+    .imgs-tech {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-content: center;
+        align-items: center;
+        margin-top: 4.2rem;
+        width: 85%;
     }
 
     :host ::ng-deep .p-carousel.p-component.p-carousel-horizontal {
@@ -798,7 +831,7 @@ div .animationContact2 {
         justify-content: center;
         align-items: center;
         align-content: center;
-        width: 30rem;
+        width: 90vw;
     }
 
     .carosel {
@@ -807,8 +840,8 @@ div .animationContact2 {
         justify-content: start;
         align-items: center;
         align-content: center;
-        margin-left: 6rem;
-        margin-top: -12rem;
+        margin-left: 4vw;
+        margin-top: -25rem;
     }
 
     .dev {
@@ -816,7 +849,7 @@ div .animationContact2 {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 40rem;
+        width: 90vw;
     }
 
     .dev2 {
@@ -825,12 +858,12 @@ div .animationContact2 {
     }
 
     .contact {
-        width: 43.5rem;
+        width: 103vw;
         margin-left: -0.5rem;
         margin-right: -0.5rem;
         margin-top: 5rem;
         background-color: #202020;
-        height: 30rem;
+        height: 23.5rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -840,13 +873,13 @@ div .animationContact2 {
     .firstInputs {
         display: flex;
         flex-direction: row;
-        width: 86.7%;
+        width: 70%;
         justify-content: space-between;
     }
 
     .p-inputtext.input {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-        font-size: 1rem;
+        font-size: 0.7rem;
         color: #FFFFFF;
         background: #0000;
         padding: 0.75rem 0.75rem;
@@ -856,11 +889,27 @@ div .animationContact2 {
         appearance: none;
         border-radius: 6px;
         margin-right: 12px;
+        height: 2rem;
+    }
+
+    .p-inputtext.inputNotValid {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        font-size: 0.7rem;
+        color: #FFFFFF;
+        background: #0000;
+        padding: 0.75rem 0.75rem;
+        border: 1px solid #ff0606;
+        transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+        -webkit-appearance: none;
+        appearance: none;
+        border-radius: 6px;
+        margin-right: 12px;
+        height: 2rem;
     }
 
     .p-inputtext.inputresp {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-        font-size: 1rem;
+        font-size: 0.7rem;
         color: #FFFFFF;
         background: #0000;
         padding: 0.75rem 0.75rem;
@@ -870,7 +919,7 @@ div .animationContact2 {
         appearance: none;
         border-radius: 6px;
         margin-right: 12px;
-        width: 37rem;
+        width: 70vw;
     }
 
     footer {
@@ -885,7 +934,7 @@ div .animationContact2 {
         justify-content: end;
         align-items: center;
         align-content: center;
-        width: 43.5rem;
+        width: 103vw;
     }
 
     .labelsWppEmail {
@@ -897,7 +946,7 @@ div .animationContact2 {
 
     .p-inputtext.wpp {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-        font-size: 1rem;
+        font-size: 0.7rem;
         color: #FFFFFF;
         background: #0000;
         padding: 0.75rem 0.75rem;
@@ -907,12 +956,13 @@ div .animationContact2 {
         appearance: none;
         border-radius: 6px;
         margin-right: 12px;
-        width: 37rem;
+        width: 70vw;
+        height: 2rem;
         margin-top: 2rem;
     }
     .p-inputtext.wppNotValid {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-        font-size: 1rem;
+        font-size: 0.7rem;
         color: #FFFFFF;
         background: #0000;
         padding: 0.75rem 0.75rem;
@@ -923,7 +973,8 @@ div .animationContact2 {
         border-radius: 6px;
         margin-right: 12px;
         margin-top: 2rem;
-        width: 37rem;
+        width: 70vw;
+        height: 2rem;
     }
     :host ::ng-deep .p-dialog {
         position: relative;
