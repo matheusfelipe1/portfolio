@@ -103,7 +103,7 @@
                 [autoplayInterval]="3500" [showIndicators]="widthPage <= 768 ? true : false"
                 [showNavigators]="widthPage <= 768 ? false : true">
                 <ng-template let-item pTemplate="item">
-                    <img [style]="{'width': widthPage <= 768 ? '100%' : ''}" [src]="item" />
+                    <img [style]="{'width': widthPage <= 768 ? '100%' : '100%', 'padding' : widthPage <= 768 ? '' : '10px'}" [src]="item" />
                 </ng-template>
             </p-carousel>
         </div>
@@ -111,7 +111,7 @@
             <img class="dev2" src="../../../assets/images/im_dev.png" style="margin-top: '6rem';" />
         </div>
         <div id='Contato' class="contact">
-            <h1>Escolha a forma de contato</h1>
+            <h1 style="margin-top: 5vh">Escolha a forma de contato</h1>
             <div class="labelsWppEmail">
                 <div (click)="flip1()" class="labelr">
                     <p-radioButton (onClick)="flip1()" styleClass="radio-style" name="contato" value="email"
@@ -173,8 +173,7 @@
     </div>
 </section>
 <p-dialog header="Title" [(visible)]="showDisplay" [blockScroll]="true" [transitionOptions]="'10ms'"
-    [dismissableMask]="true" [modal]="true" [responsive]="true" [style]="{width:  widthPage <= 768 ?'38rem' : '80rem'}"
-    ngClass="teste">
+    [dismissableMask]="true" [modal]="true" [responsive]="true"  ngClass="teste">
     <ng-template pTemplate="header">
         <img [src]="dialog.path" [style]="{'height': dialog.title !== '1' ? '1.2rem' : '3.5rem'}" alt="">
     </ng-template>
@@ -190,8 +189,7 @@
 </div>
 
 <p-dialog [header]="resultTitle" [(visible)]="showDisplayResult" [blockScroll]="true" [transitionOptions]="'10ms'"
-    [dismissableMask]="true" [modal]="true" [responsive]="true" [style]="{width: widthPage <= 768 ?'38rem' : '80rem'}"
-    ngClass="teste">
+    [dismissableMask]="true" [modal]="true" [responsive]="true"     ngClass="teste">
     {{resultMsg}}
     <ng-template pTemplate="footer">
         <button pButton type="button" icon="pi pi-check" (click)="showDisplayResult = false" label="Entendi"
