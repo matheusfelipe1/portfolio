@@ -904,3 +904,283 @@ div .animationContact2 {
     }
 
 }
+
+@media screen and (max-width: 1024px) {
+    .header {
+        margin-top: -0.5rem;
+        margin-left: -0.5rem;
+        margin-right: -0.5rem;
+        height: 3.3rem;
+        background-color: #000000;
+        position: fixed;
+        width: 48.5rem;
+    }
+    .nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        align-items: center;
+        margin-right: 1rem;
+    }
+
+    .imagem {
+        background-image: url("../../../assets/images/imagem.png");
+        background-color: #cccccc;
+        /* height: 50rem; */
+        margin-left: -0.5rem;
+        margin-right: -0.5rem;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        width: 48.5rem;
+    }
+
+    .imgName {
+        width: 33rem;
+    }
+
+    .profission {
+        font: var(--unnamed-font-style-normal) normal normal 42px/56px var(--unnamed-font-family-segoe-ui);
+        letter-spacing: var(--unnamed-character-spacing-0);
+        color: var(--unnamed-color-ffffff);
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 34px;
+        letter-spacing: 2px;
+        color: #FFFFFF;
+        opacity: 1;
+    }
+
+    .buttonslinks {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 40%;
+        margin-top: 0.7rem;
+    }
+
+    .aboutme {
+        height: 60rem;
+        margin-left: -0.5rem;
+        margin-right: -0.5rem;
+        background: var(--unnamed-color-202020) 0% 0% no-repeat padding-box;
+        background: #202020 0% 0% no-repeat padding-box;
+        opacity: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        width: 48.5rem;
+    }
+
+    .aboutme .text {
+        font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-bold) var(--unnamed-font-size-31)/var(--unnamed-line-spacing-41) var(--unnamed-font-family-segoe-ui);
+        letter-spacing: var(--unnamed-character-spacing-0);
+        color: var(--unnamed-color-f25790);
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 27px;
+        letter-spacing: 0px;
+        color: #F25790;
+        opacity: 1;
+    }
+
+    .textabouteme {
+        font: var(--unnamed-font-style-normal) normal normal 22px/30px var(--unnamed-font-family-segoe-ui);
+        letter-spacing: var(--unnamed-character-spacing-0);
+        color: var(--unnamed-color-ffffff);
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 19.5px;
+        letter-spacing: 0px;
+        color: #FFFFFF;
+        opacity: 1;
+        margin-top: 5rem;
+        width: 75%;
+    }
+
+    .content-tech {
+        display: flex;
+        flex-direction: column;
+        justify-content: top;
+        align-items: center;
+        align-content: center;
+        width: 47rem;
+        /* height: 20rem; */
+    }
+
+    .tech {
+        border-radius: 121px;
+        opacity: 1;
+        width: 102%;
+        height: 40%;
+        background-color: #FFFFFF;
+        margin-top: -7rem;
+        margin-left: 1.02rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: top;
+        align-items: center;
+        align-content: center;
+    }
+
+    .img-projectsresp {
+        width: 9rem;
+    }
+
+    .img-projectsresp2 {
+        height: 5rem;
+    }
+
+    .img-projectsresp3 {
+        height: 2.2rem;
+    }
+
+    :host ::ng-deep .p-carousel.p-component.p-carousel-horizontal {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        width: 30rem;
+    }
+
+    .carosel {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+        align-content: center;
+        margin-left: 10rem;
+        margin-top: -12rem;
+    }
+
+    .dev {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 45rem;
+    }
+
+    .dev2 {
+        width: 90%;
+        margin-left: 1rem;
+    }
+
+    .contact {
+        width: 48.5rem;
+        margin-left: -0.5rem;
+        margin-right: -0.5rem;
+        margin-top: 5rem;
+        background-color: #202020;
+        height: 30rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .firstInputs {
+        display: flex;
+        flex-direction: row;
+        width: 77.4%;
+        justify-content: space-between;
+    }
+
+    .p-inputtext.input {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        font-size: 1rem;
+        color: #FFFFFF;
+        background: #0000;
+        padding: 0.75rem 0.75rem;
+        border: 1px solid #FFFFFF;
+        transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+        -webkit-appearance: none;
+        appearance: none;
+        border-radius: 6px;
+        margin-right: 12px;
+    }
+
+    .p-inputtext.inputresp {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        font-size: 1rem;
+        color: #FFFFFF;
+        background: #0000;
+        padding: 0.75rem 0.75rem;
+        border: 1px solid #FFFFFF;
+        transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+        -webkit-appearance: none;
+        appearance: none;
+        border-radius: 6px;
+        margin-right: 12px;
+        width: 37rem;
+    }
+
+    footer {
+        background: #000000 0% 0% no-repeat padding-box;
+        opacity: 1;
+        height: 2.5rem;
+        margin-left: -0.5rem;
+        margin-right: -0.5rem;
+        margin-bottom: -0.5rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        align-items: center;
+        align-content: center;
+        width: 48.5rem;
+    }
+
+    .labelsWppEmail {
+        display: flex;
+        flex-direction: row;
+        width: 70%;
+        justify-content: space-between;
+    }
+
+    .p-inputtext.wpp {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        font-size: 1rem;
+        color: #FFFFFF;
+        background: #0000;
+        padding: 0.75rem 0.75rem;
+        border: 1px solid #FFFFFF;
+        transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+        -webkit-appearance: none;
+        appearance: none;
+        border-radius: 6px;
+        margin-right: 12px;
+        width: 37rem;
+        margin-top: 2rem;
+    }
+    .p-inputtext.wppNotValid {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        font-size: 1rem;
+        color: #FFFFFF;
+        background: #0000;
+        padding: 0.75rem 0.75rem;
+        border: 1px solid #f80606;
+        transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+        -webkit-appearance: none;
+        appearance: none;
+        border-radius: 6px;
+        margin-right: 12px;
+        margin-top: 2rem;
+        width: 37rem;
+    }
+    :host ::ng-deep .p-dialog {
+        position: relative;
+        animation-name: dialog;
+        animation-duration: 1s;
+        animation-delay: 0s;
+        width: 80rem;
+    }
+
+}
