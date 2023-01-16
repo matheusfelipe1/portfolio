@@ -1,6 +1,6 @@
 <section [class]="showDisplay === true ? 'indisplay' : ''">
     <div class="all-content" id="divInitial">
-        <div *ngIf="widthPage >= 768" id="nav" class="header">
+        <div *ngIf="widthPage > 768" id="nav" class="header">
             <div class="nav">
                 <div *ngFor="let title of nav">
                     <div class="onNavHover" (click)="onChangeNav(title)">
@@ -133,10 +133,10 @@
                     <div class="col-12 md:col-4"> -->
                 <div class="p-inputgroup">
                     <input (input)="enableEmail = true" [(ngModel)]="sendEmail.email"
-                        [ngClass]="sendEmail.email === '' && enableEmail ? 'inputNotValid' : widthPage > 768 ? 'input 1 animationContact' : 'input 1'"
+                        [ngClass]="sendEmail.email === '' && enableEmail ? 'inputNotValid' : 'input 1 animationContact' "
                         type="text" pInputText placeholder="E-mail">
                     <input (input)="enableEmail = true" [(ngModel)]="sendEmail.name"
-                        [ngClass]="sendEmail.name === '' && enableEmail ? 'inputNotValid' :  widthPage > 768 ? 'input 2 animationContact2' : 'input 2'"
+                        [ngClass]="sendEmail.name === '' && enableEmail ? 'inputNotValid' :  'input 2 animationContact2' "
                         type="text" pInputText placeholder="Nome">
                 </div>
                 <!-- </div> -->
@@ -144,22 +144,22 @@
             </div>
             <div *ngIf="!isWpp" style="margin-top: 25px;">
                 <textarea (input)="enableEmail = true"
-                    [ngClass]="sendEmail.text === '' && enableEmail ? 'inputNotValid inputresp' : widthPage > 768 ? 'inputresp input 1 animationContact' : 'inputresp input 1'"
+                    [ngClass]="sendEmail.text === '' && enableEmail ? 'inputNotValid inputresp' : 'inputresp input 1 animationContact' "
                     [(ngModel)]="sendEmail.text" [autoResize]="true" [cols]="85" [rows]="4" pInputTextarea
                     placeholder="Mensagem"></textarea>
             </div>
             <div *ngIf="isWpp" class="divInput">
                 <input
-                    [ngClass]="name === '' && enableWpp ? 'wppNotValid' : widthPage > 768 ? 'wpp 1 animationContact' : 'wpp 1'"
+                    [ngClass]="name === '' && enableWpp ? 'wppNotValid' : 'wpp 1 animationContact' "
                     *ngIf="isWpp" type="text" pInputText placeholder="Informe seu nome" [(ngModel)]="name"
                     (input)="enableWpp = true">
 
             </div>
             <button [disabled]="!returnValidForm()" *ngIf="!isWpp" pButton
-                [class]="widthPage > 768 ? '2 animationContact2' : '2'" type="button" icon="pi pi-send" label="Enviar"
+                [class]="'2 animationContact2' " type="button" icon="pi pi-send" label="Enviar"
                 (click)="postEmail()">
             </button>
-            <button [class]="  widthPage > 768 ? 'wppButton 2 animationContact2' : 'wppButton 2'" *ngIf="isWpp" pButton
+            <button [class]="  'wppButton 2 animationContact2' " *ngIf="isWpp" pButton
                 type="button" icon="pi pi-whatsapp" label="Abrir Whatsapp e enviar" (click)="openWpp()"
                 [disabled]="name === '' ? true : false">
                 <a [href]="returnLinkWpp()" id="wppId" target="_blank" rel="noopener noreferrer" hidden></a>
@@ -187,7 +187,6 @@
 
 <div *ngIf="loading" class="popupMaskChanged">
     <p-progressSpinner styleClass="custom-spinner" strokeWidth="8" animationDuration=".5s"></p-progressSpinner>
-    <!-- <p-progressSpinner></p-progressSpinner> -->
 </div>
 
 <p-dialog [header]="resultTitle" [(visible)]="showDisplayResult" [blockScroll]="true" [transitionOptions]="'10ms'"

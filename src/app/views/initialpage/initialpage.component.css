@@ -657,7 +657,7 @@ div .animationContact2 {
         justify-content: center;
         align-items: center;
         align-content: center;
-        width: 42rem;
+        width: 43.5rem;
     }
 
     .imgName {
@@ -696,7 +696,7 @@ div .animationContact2 {
         justify-content: center;
         align-items: center;
         align-content: center;
-        width: 42rem;
+        width: 43.5rem;
     }
 
     .aboutme .text {
@@ -729,19 +729,20 @@ div .animationContact2 {
         display: flex;
         flex-direction: column;
         justify-content: top;
-        align-items: start;
-        align-content: start;
+        align-items: center;
+        align-content: center;
+        width: 42rem;
         /* height: 20rem; */
     }
 
     .tech {
         border-radius: 121px;
         opacity: 1;
-        width: 42rem;
+        width: 102%;
         height: 40%;
         background-color: #FFFFFF;
         margin-top: -7rem;
-        margin-left: -0.5rem;
+        margin-left: 1.02rem;
         display: flex;
         flex-direction: column;
         justify-content: top;
@@ -794,7 +795,7 @@ div .animationContact2 {
     }
 
     .contact {
-        width: 42rem;
+        width: 43.5rem;
         margin-left: -0.5rem;
         margin-right: -0.5rem;
         margin-top: 5rem;
@@ -809,7 +810,7 @@ div .animationContact2 {
     .firstInputs {
         display: flex;
         flex-direction: row;
-        width: 90%;
+        width: 86.7%;
         justify-content: space-between;
     }
 
@@ -854,7 +855,7 @@ div .animationContact2 {
         justify-content: end;
         align-items: center;
         align-content: center;
-        width: 42rem;
+        width: 43.5rem;
     }
 
     .labelsWppEmail {
