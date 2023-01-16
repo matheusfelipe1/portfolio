@@ -46,11 +46,12 @@
             </div>
         </div>
         <div id='Sobre' class="aboutme">
-            <p class="text">Olá, sou o Matheus.</p>
+            <p class="text">{{aboutme1}}<br>{{aboutme3}}</p>
             <img *ngIf="!piscando" src="../../../assets/images/avatar_2.png" style="margin-top: '2.2rem';" />
             <img *ngIf="piscando" src="../../../assets/images/avatar_2_piscando.png" style="margin-top: '2.2rem';" />
-            <p class="textabouteme">Atuo como desenvolvedor desde 2019, tendo contato com diversas tecnologias, sempre
-                em constante evolução.</p>
+            <!-- <p class="textabouteme">Atuo como desenvolvedor desde 2019, tendo contato com diversas tecnologias, sempre
+                em constante evolução.</p> -->
+            <p class="textabouteme">{{aboutme2}}</p>
             <button id="animation1" pButton type="button" icon="pi pi-download" label="Currículo" (click)="piscar()">
             </button>
         </div>

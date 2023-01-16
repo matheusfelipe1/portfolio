@@ -73,6 +73,9 @@ export class InitialpageComponent {
   resultMsg: string = "";
   widthPage: number = window.innerWidth;
   isCollapsed: boolean = true;
+  aboutme1: string = Enviroments.aboutme1;
+  aboutme2: string = Enviroments.aboutme2;
+  aboutme3: string = Enviroments.aboutme3;
 
   changeState() {
     if (this.canAnimate === true) {

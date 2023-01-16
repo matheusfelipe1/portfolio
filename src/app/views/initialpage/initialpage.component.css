@@ -147,7 +147,7 @@
 }
 
 .aboutme {
-    height: 60rem;
+    height: 145vh;
     margin-left: -0.5rem;
     margin-right: -0.5rem;
     background: var(--unnamed-color-202020) 0% 0% no-repeat padding-box;
@@ -170,6 +170,7 @@
     letter-spacing: 0px;
     color: #F25790;
     opacity: 1;
+    margin-bottom: 1vh;
 }
 
 .textabouteme {
@@ -183,6 +184,7 @@
     color: #FFFFFF;
     opacity: 1;
     margin-top: 5rem;
+    width: 89vw;
 }
 
 .content-tech {
@@ -713,7 +715,7 @@ div .animationContact2 {
     }
 
     .aboutme {
-        height: 60rem;
+        height: 156vh;
         margin-left: -0.5rem;
         margin-right: -0.5rem;
         background: var(--unnamed-color-202020) 0% 0% no-repeat padding-box;
@@ -993,7 +995,7 @@ div .animationContact2 {
     }
 
     .aboutme {
-        height: 60rem;
+        height: 150vh;
         margin-left: -0.5rem;
         margin-right: -0.5rem;
         background: var(--unnamed-color-202020) 0% 0% no-repeat padding-box;
